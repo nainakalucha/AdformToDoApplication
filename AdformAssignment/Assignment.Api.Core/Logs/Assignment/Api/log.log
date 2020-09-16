@@ -1,0 +1,1556 @@
+TimeStamp=2020-09-16 12:43:56.2759 Level=INFO RequestId=0HM2Q209JGNLO:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 12:43:56.2759 Level=INFO RequestId=0HM2Q209JGNLP:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 12:43:56.3556 Level=INFO RequestId=0HM2Q209JGNLP:00000001 Message=Request finished in 82.7623ms 200 
+TimeStamp=2020-09-16 12:43:56.6848 Level=INFO RequestId=0HM2Q209JGNLO:00000001 Message=Request finished in 325.712ms 401 
+TimeStamp=2020-09-16 12:49:11.4018 Level=INFO RequestId=0HM2Q237GVKC7:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 12:49:11.4018 Level=INFO RequestId=0HM2Q237GVKC8:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 12:49:11.4778 Level=INFO RequestId=0HM2Q237GVKC7:00000001 Message=Request finished in 75.882ms 200 
+TimeStamp=2020-09-16 12:49:11.5845 Level=INFO RequestId=0HM2Q237GVKC8:00000001 Message=Request finished in 159.3985ms 401 
+TimeStamp=2020-09-16 13:42:36.4063 Level=INFO RequestId=0HM2Q312MBCEU:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 13:42:36.4063 Level=INFO RequestId=0HM2Q312MBCEV:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 13:42:36.4644 Level=INFO RequestId=0HM2Q312MBCEV:00000001 Message=Request finished in 65.5435ms 200 
+TimeStamp=2020-09-16 13:42:36.5372 Level=INFO RequestId=0HM2Q312MBCEU:00000001 Message=Request finished in 137.6004ms 401 
+TimeStamp=2020-09-16 13:42:40.6105 Level=INFO RequestId=0HM2Q312MBCEV:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 13:42:40.6416 Level=INFO RequestId=0HM2Q312MBCEV:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 13:42:40.8240 Level=INFO RequestId=0HM2Q312MBCEV:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 13:42:40.8487 Level=INFO RequestId=0HM2Q312MBCEV:00000002 Message=Request finished in 218.6853ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 13:42:41.9176 Level=INFO RequestId=0HM2Q312MBCEU:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-16 13:42:42.4453 Level=INFO RequestId=0HM2Q312MBCEU:00000002 Message=Request finished in 530.6593ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-16 13:43:00.5920 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/ToDoItem  
+TimeStamp=2020-09-16 13:43:00.6187 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 13:43:01.1488 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Executed DbCommand (391ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 13:43:01.2167 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Request Body: 
+TimeStamp=2020-09-16 13:43:01.3257 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Route matched with {action = "GetToDoItem", controller = "ToDoItem"}. Executing action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core)
+TimeStamp=2020-09-16 13:43:01.3594 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Executing action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 13:43:42.2008 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Api GetToDoItem
+TimeStamp=2020-09-16 13:43:42.4558 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Executed DbCommand (238ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedDate], [t].[LabelId], [t].[Note], [t].[ToDoListId], [t].[UpdatedBy], [t].[UpdatedDate]
+FROM [ToDoItem] AS [t]
+TimeStamp=2020-09-16 13:43:42.5033 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Executed action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 41137.9379ms.
+TimeStamp=2020-09-16 13:43:42.5214 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoItemDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 13:43:42.8445 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Executed action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) in 41445.6754ms
+TimeStamp=2020-09-16 13:43:42.8445 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Response Body: [{"id":1,"toDoListId":1,"note":"note_update","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":2,"toDoListId":1,"note":"item2","labelId":1,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":3,"toDoListId":1,"note":"item3","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":4,"toDoListId":1,"note":"item4","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":5,"toDoListId":1,"note":"item-5","labelId":2,"createdBy":1,"createdDate":"2020-09-14T19:26:10.873","updatedBy":1,"updatedDate":"2020-09-14T19:26:10.873"}]
+TimeStamp=2020-09-16 13:43:42.8744 Level=INFO RequestId=0HM2Q312MBCEV:00000003 Message=Request finished in 42260.4008ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 13:43:47.5601 Level=INFO RequestId=0HM2Q312MBCEV:00000004 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/ToDoItem  
+TimeStamp=2020-09-16 13:43:47.5700 Level=INFO RequestId=0HM2Q312MBCEV:00000004 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 14:06:01.7115 Level=INFO RequestId=0HM2Q3E5FTVKF:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:06:01.6794 Level=INFO RequestId=0HM2Q3E5FTVKG:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:06:01.8077 Level=INFO RequestId=0HM2Q3E5FTVKG:00000001 Message=Request finished in 137.3222ms 200 
+TimeStamp=2020-09-16 14:06:01.9538 Level=INFO RequestId=0HM2Q3E5FTVKF:00000001 Message=Request finished in 255.2585ms 401 
+TimeStamp=2020-09-16 14:06:11.6156 Level=INFO RequestId=0HM2Q3E5FTVKG:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 14:06:11.6433 Level=INFO RequestId=0HM2Q3E5FTVKG:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:06:11.8536 Level=INFO RequestId=0HM2Q3E5FTVKG:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 14:06:11.8808 Level=INFO RequestId=0HM2Q3E5FTVKG:00000002 Message=Request finished in 246.0954ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 14:06:12.4047 Level=INFO RequestId=0HM2Q3E5FTVKF:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-16 14:06:12.9950 Level=INFO RequestId=0HM2Q3E5FTVKF:00000002 Message=Request finished in 590.9649ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-16 14:06:26.8266 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/ToDoItem  
+TimeStamp=2020-09-16 14:06:26.8421 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 14:06:27.2608 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Executed DbCommand (282ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 14:06:27.3260 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:06:27.4477 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Route matched with {action = "GetToDoItem", controller = "ToDoItem"}. Executing action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core)
+TimeStamp=2020-09-16 14:06:27.4768 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Executing action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 14:06:42.8412 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Api GetToDoItem
+TimeStamp=2020-09-16 14:06:43.2309 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Executed DbCommand (338ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 14:06:43.3055 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Executed action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15822.3667ms.
+TimeStamp=2020-09-16 14:06:43.3328 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoItemDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 14:06:43.5347 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Executed action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) in 16082.8667ms
+TimeStamp=2020-09-16 14:06:43.5347 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Response Body: [{"id":1,"toDoListId":1,"note":"note_update","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":2,"toDoListId":1,"note":"item2","labelId":1,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":3,"toDoListId":1,"note":"item3","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":4,"toDoListId":1,"note":"item4","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":5,"toDoListId":1,"note":"item-5","labelId":2,"createdBy":1,"createdDate":"2020-09-14T19:26:10.873","updatedBy":1,"updatedDate":"2020-09-14T19:26:10.873"}]
+TimeStamp=2020-09-16 14:06:43.5347 Level=INFO RequestId=0HM2Q3E5FTVKG:00000003 Message=Request finished in 16715.0439ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:07:03.5480 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/ToDoItem  
+TimeStamp=2020-09-16 14:07:03.5480 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 14:07:03.8146 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Executed DbCommand (235ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 14:07:03.8146 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:07:03.8146 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Route matched with {action = "GetToDoItem", controller = "ToDoItem"}. Executing action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core)
+TimeStamp=2020-09-16 14:07:03.8288 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Executing action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 14:07:07.1716 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Api GetToDoItem
+TimeStamp=2020-09-16 14:07:11.4890 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Executed DbCommand (234ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 14:07:11.4890 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Executed action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7660.6125ms.
+TimeStamp=2020-09-16 14:07:11.5330 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoItemDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 14:07:11.5330 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Executed action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) in 7709.0392ms
+TimeStamp=2020-09-16 14:07:11.5330 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Response Body: [{"id":1,"toDoListId":1,"note":"note_update","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":2,"toDoListId":1,"note":"item2","labelId":1,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":3,"toDoListId":1,"note":"item3","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":4,"toDoListId":1,"note":"item4","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":5,"toDoListId":1,"note":"item-5","labelId":2,"createdBy":1,"createdDate":"2020-09-14T19:26:10.873","updatedBy":1,"updatedDate":"2020-09-14T19:26:10.873"}]
+TimeStamp=2020-09-16 14:07:11.5502 Level=INFO RequestId=0HM2Q3E5FTVKF:00000003 Message=Request finished in 7993.3467ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:07:31.3614 Level=INFO RequestId=0HM2Q3E5FTVKG:00000004 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:07:31.3614 Level=INFO RequestId=0HM2Q3E5FTVKG:00000004 Message=Request finished in 12.1468ms 200 application/javascript
+TimeStamp=2020-09-16 14:07:32.4288 Level=INFO RequestId=0HM2Q3E5FTVKF:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:07:36.5816 Level=INFO RequestId=0HM2Q3E5FTVKG:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:07:38.2887 Level=INFO RequestId=0HM2Q3E5FTVKH:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:07:40.5058 Level=INFO RequestId=0HM2Q3E5FTVKI:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:14:07.5447 Level=INFO RequestId=0HM2Q3IM9L004:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:14:07.5447 Level=INFO RequestId=0HM2Q3IM9L003:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:14:07.5447 Level=INFO RequestId=0HM2Q3IM9L005:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:14:07.6025 Level=INFO RequestId=0HM2Q3IM9L003:00000001 Message=Request finished in 65.3603ms 200 
+TimeStamp=2020-09-16 14:14:07.6510 Level=INFO RequestId=0HM2Q3IM9L004:00000001 Message=Request finished in 114.8412ms 200 application/javascript
+TimeStamp=2020-09-16 14:14:07.7381 Level=INFO RequestId=0HM2Q3IM9L005:00000001 Message=Request finished in 170.8923ms 401 
+TimeStamp=2020-09-16 14:14:08.7124 Level=INFO RequestId=0HM2Q3IM9L003:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:14:40.9230 Level=INFO RequestId=0HM2Q3J0769R7:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:14:41.3977 Level=INFO RequestId=0HM2Q3J0769R7:00000001 Message=Request finished in 486.9518ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:17:19.2258 Level=INFO RequestId=0HM2Q3KFDF571:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:17:19.2258 Level=INFO RequestId=0HM2Q3KFDF570:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:17:19.3054 Level=INFO RequestId=0HM2Q3KFDF570:00000001 Message=Request finished in 74.1624ms 200 
+TimeStamp=2020-09-16 14:17:19.3786 Level=INFO RequestId=0HM2Q3KFDF571:00000001 Message=Request finished in 169.1942ms 401 
+TimeStamp=2020-09-16 14:17:33.5904 Level=INFO RequestId=0HM2Q3KFDF570:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 14:17:33.6098 Level=INFO RequestId=0HM2Q3KFDF570:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:17:33.7714 Level=INFO RequestId=0HM2Q3KFDF570:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 14:17:33.7714 Level=INFO RequestId=0HM2Q3KFDF570:00000002 Message=Request finished in 187.3161ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 14:17:34.3183 Level=INFO RequestId=0HM2Q3KFDF571:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-16 14:17:34.8151 Level=INFO RequestId=0HM2Q3KFDF571:00000002 Message=Request finished in 503.8535ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-16 14:17:55.5689 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/ToDoItem  
+TimeStamp=2020-09-16 14:17:55.5786 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 14:17:55.9679 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Executed DbCommand (248ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 14:17:56.0369 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:17:56.1547 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Route matched with {action = "GetToDoItem", controller = "ToDoItem"}. Executing action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core)
+TimeStamp=2020-09-16 14:17:56.1822 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Executing action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 14:18:01.0855 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Api GetToDoItem
+TimeStamp=2020-09-16 14:18:05.2677 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Executed DbCommand (255ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 14:18:05.3039 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Executed action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 9117.4561ms.
+TimeStamp=2020-09-16 14:18:05.3212 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoItemDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 14:18:05.5263 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Executed action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) in 9367.3346ms
+TimeStamp=2020-09-16 14:18:05.5263 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Response Body: [{"id":1,"toDoListId":1,"note":"note_update","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":2,"toDoListId":1,"note":"item2","labelId":1,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":3,"toDoListId":1,"note":"item3","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":4,"toDoListId":1,"note":"item4","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":5,"toDoListId":1,"note":"item-5","labelId":2,"createdBy":1,"createdDate":"2020-09-14T19:26:10.873","updatedBy":1,"updatedDate":"2020-09-14T19:26:10.873"}]
+TimeStamp=2020-09-16 14:18:05.5301 Level=INFO RequestId=0HM2Q3KFDF570:00000003 Message=Request finished in 9962.597ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:18:10.9260 Level=INFO RequestId=0HM2Q3KFDF571:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:18:10.9260 Level=INFO RequestId=0HM2Q3KFDF571:00000003 Message=Request finished in 6.8141ms 200 application/javascript
+TimeStamp=2020-09-16 14:18:11.9750 Level=INFO RequestId=0HM2Q3KFDF570:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:23:04.2570 Level=INFO RequestId=0HM2Q3NM8EAU9:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:23:04.2570 Level=INFO RequestId=0HM2Q3NM8EAUA:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:23:04.2570 Level=INFO RequestId=0HM2Q3NM8EAU7:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:23:04.2570 Level=INFO RequestId=0HM2Q3NM8EAU8:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:23:04.6703 Level=INFO RequestId=0HM2Q3NM8EAU7:00000001 Message=Request finished in 420.0851ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:23:04.6703 Level=INFO RequestId=0HM2Q3NM8EAUA:00000001 Message=Request finished in 420.0793ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:23:04.6703 Level=INFO RequestId=0HM2Q3NM8EAU8:00000001 Message=Request finished in 420.0718ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:23:04.6703 Level=INFO RequestId=0HM2Q3NM8EAU9:00000001 Message=Request finished in 420.0512ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:24:24.4710 Level=INFO RequestId=0HM2Q3OE4OJEK:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:24:24.4710 Level=INFO RequestId=0HM2Q3OE4OJEL:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:24:24.5455 Level=INFO RequestId=0HM2Q3OE4OJEK:00000001 Message=Request finished in 73.8576ms 200 
+TimeStamp=2020-09-16 14:24:24.7648 Level=INFO RequestId=0HM2Q3OE4OJEL:00000001 Message=Request finished in 271.7623ms 401 
+TimeStamp=2020-09-16 14:24:38.0306 Level=INFO RequestId=0HM2Q3OE4OJEK:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:24:38.0306 Level=INFO RequestId=0HM2Q3OE4OJEK:00000002 Message=Request finished in 10.4212ms 200 application/javascript
+TimeStamp=2020-09-16 14:24:39.3815 Level=INFO RequestId=0HM2Q3OE4OJEL:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:24:44.3246 Level=INFO RequestId=0HM2Q3OE4OJEK:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:07.3061 Level=INFO RequestId=0HM2Q3SO2FLUO:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:32:07.3061 Level=INFO RequestId=0HM2Q3SO2FLUN:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:32:07.5246 Level=INFO RequestId=0HM2Q3SO2FLUN:00000001 Message=Request finished in 207.1847ms 200 
+TimeStamp=2020-09-16 14:32:10.8229 Level=INFO RequestId=0HM2Q3SO2FLUO:00000001 Message=Request finished in 3528.9924ms 401 
+TimeStamp=2020-09-16 14:32:18.4677 Level=INFO RequestId=0HM2Q3SO2FLUN:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 14:32:23.3464 Level=INFO RequestId=0HM2Q3SO2FLUN:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:32:23.4870 Level=INFO RequestId=0HM2Q3SO2FLUN:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 14:32:23.4989 Level=INFO RequestId=0HM2Q3SO2FLUN:00000002 Message=Request finished in 5042.1639ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 14:32:25.7901 Level=INFO RequestId=0HM2Q3SO2FLUO:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-16 14:32:26.2425 Level=INFO RequestId=0HM2Q3SO2FLUO:00000002 Message=Request finished in 450.7512ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-16 14:32:38.3543 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/ToDoItem  
+TimeStamp=2020-09-16 14:32:38.3650 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 14:32:38.8006 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Executed DbCommand (267ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 14:32:38.8760 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:32:38.9790 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Route matched with {action = "GetToDoItem", controller = "ToDoItem"}. Executing action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core)
+TimeStamp=2020-09-16 14:32:39.0052 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Executing action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 14:32:39.0052 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Api GetToDoItem
+TimeStamp=2020-09-16 14:32:41.3033 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Executed DbCommand (235ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 14:32:41.3799 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Executed action method Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2367.9993ms.
+TimeStamp=2020-09-16 14:32:41.4247 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoItemDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 14:32:41.6537 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Executed action Assignment.Api.Core.ToDoItemController.GetToDoItem (Assignment.Api.Core) in 2645.1611ms
+TimeStamp=2020-09-16 14:32:41.6537 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString:  Response Body: [{"id":1,"toDoListId":1,"note":"note_update","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":2,"toDoListId":1,"note":"item2","labelId":1,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":3,"toDoListId":1,"note":"item3","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":4,"toDoListId":1,"note":"item4","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"},{"id":5,"toDoListId":1,"note":"item-5","labelId":2,"createdBy":1,"createdDate":"2020-09-14T19:26:10.873","updatedBy":1,"updatedDate":"2020-09-14T19:26:10.873"}]
+TimeStamp=2020-09-16 14:32:41.7139 Level=INFO RequestId=0HM2Q3SO2FLUN:00000003 Message=Request finished in 3306.2245ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:32:48.0754 Level=INFO RequestId=0HM2Q3SO2FLUO:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:32:48.0754 Level=INFO RequestId=0HM2Q3SO2FLUO:00000003 Message=Request finished in 7.444ms 200 application/javascript
+TimeStamp=2020-09-16 14:32:49.1385 Level=INFO RequestId=0HM2Q3SO2FLUN:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:49.7889 Level=INFO RequestId=0HM2Q3SO2FLUN:00000004 Message=Request finished in 657.5273ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:32:49.8422 Level=INFO RequestId=0HM2Q3SO2FLUO:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:49.8691 Level=INFO RequestId=0HM2Q3SO2FLUO:00000004 Message=Request finished in 18.4089ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:32:51.8373 Level=INFO RequestId=0HM2Q3SO2FLUN:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:51.8592 Level=INFO RequestId=0HM2Q3SO2FLUN:00000005 Message=Request finished in 15.3065ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:32:53.9186 Level=INFO RequestId=0HM2Q3SO2FLUO:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:53.9435 Level=INFO RequestId=0HM2Q3SO2FLUO:00000005 Message=Request finished in 26.8992ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:32:55.9814 Level=INFO RequestId=0HM2Q3SO2FLUN:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:56.0415 Level=INFO RequestId=0HM2Q3SO2FLUN:00000006 Message=Request finished in 58.5364ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:32:58.0721 Level=INFO RequestId=0HM2Q3SO2FLUO:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:32:58.0818 Level=INFO RequestId=0HM2Q3SO2FLUO:00000006 Message=Request finished in 10.0114ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:33:00.1102 Level=INFO RequestId=0HM2Q3SO2FLUN:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:33:00.1538 Level=INFO RequestId=0HM2Q3SO2FLUN:00000007 Message=Request finished in 10.8622ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:33:01.6791 Level=INFO RequestId=0HM2Q3SO2FLUO:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 14:35:52.6393 Level=INFO RequestId=0HM2Q3SO2FLUN:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:52.6393 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:52.6393 Level=INFO RequestId=0HM2Q3SO2FLUP:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:52.6991 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000001 Message=Request finished in 15.0197ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:52.7011 Level=INFO RequestId=0HM2Q3SO2FLUN:00000008 Message=Request finished in 36.4649ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:52.8027 Level=INFO RequestId=0HM2Q3SO2FLUP:00000001 Message=Request finished in 21.2918ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:52.8187 Level=INFO RequestId=0HM2Q3SO2FLUR:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:52.8386 Level=INFO RequestId=0HM2Q3SO2FLUS:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:52.9941 Level=INFO RequestId=0HM2Q3SO2FLUR:00000001 Message=Request finished in 143.2014ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.0035 Level=INFO RequestId=0HM2Q3SO2FLUS:00000001 Message=Request finished in 115.9319ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.0687 Level=INFO RequestId=0HM2Q3SO2FLUP:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.1547 Level=INFO RequestId=0HM2Q3SO2FLUN:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.1883 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.1883 Level=INFO RequestId=0HM2Q3SO2FLUP:00000002 Message=Request finished in 130.469ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.2073 Level=INFO RequestId=0HM2Q3SO2FLUN:00000009 Message=Request finished in 180.9637ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.2327 Level=INFO RequestId=0HM2Q3SO2FLUO:00000007 Message=Request finished in 171534.8536ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.2575 Level=INFO RequestId=0HM2Q3SO2FLUS:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.2716 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000002 Message=Request finished in 127.9259ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.2865 Level=INFO RequestId=0HM2Q3SO2FLUO:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.2865 Level=INFO RequestId=0HM2Q3SO2FLUS:00000002 Message=Request finished in 62.0154ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.3178 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.3261 Level=INFO RequestId=0HM2Q3SO2FLUO:00000008 Message=Request finished in 38.0387ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.3261 Level=INFO RequestId=0HM2Q3SO2FLUP:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.3779 Level=INFO RequestId=0HM2Q3SO2FLUR:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.4026 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.4026 Level=INFO RequestId=0HM2Q3SO2FLUP:00000003 Message=Request finished in 74.9886ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.4265 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000003 Message=Request finished in 64.9024ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.4359 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000A Message=Request finished in 74.2643ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.4509 Level=INFO RequestId=0HM2Q3SO2FLUS:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.4742 Level=INFO RequestId=0HM2Q3SO2FLUO:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.4902 Level=INFO RequestId=0HM2Q3SO2FLUR:00000002 Message=Request finished in 196.9119ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.5069 Level=INFO RequestId=0HM2Q3SO2FLUP:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.5069 Level=INFO RequestId=0HM2Q3SO2FLUS:00000003 Message=Request finished in 92.2041ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.5408 Level=INFO RequestId=0HM2Q3SO2FLUO:00000009 Message=Request finished in 81.5917ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.5592 Level=INFO RequestId=0HM2Q3SO2FLUP:00000004 Message=Request finished in 48.2193ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.5744 Level=INFO RequestId=0HM2Q3SO2FLUR:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.5744 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.6931 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.7010 Level=INFO RequestId=0HM2Q3SO2FLUR:00000003 Message=Request finished in 80.0922ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.7171 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.7171 Level=INFO RequestId=0HM2Q3SO2FLUR:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.7171 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000B Message=Request finished in 142.199ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.7583 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000004 Message=Request finished in 205.0776ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.7743 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000A Message=Request finished in 35.0621ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.7863 Level=INFO RequestId=0HM2Q3SO2FLUP:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.8008 Level=INFO RequestId=0HM2Q3SO2FLUS:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.8385 Level=INFO RequestId=0HM2Q3SO2FLUP:00000005 Message=Request finished in 47.0774ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.8506 Level=INFO RequestId=0HM2Q3SO2FLUS:00000004 Message=Request finished in 59.3974ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.8589 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.8589 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.8849 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.8886 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000005 Message=Request finished in 44.6989ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:53.9054 Level=INFO RequestId=0HM2Q3SO2FLUS:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.9054 Level=INFO RequestId=0HM2Q3SO2FLUP:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:53.9584 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000C Message=Request finished in 55.8845ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.0221 Level=INFO RequestId=0HM2Q3SO2FLUR:00000004 Message=Request finished in 205.7129ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.0558 Level=INFO RequestId=0HM2Q3SO2FLUP:00000006 Message=Request finished in 71.2167ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.0904 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.1450 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000B Message=Request finished in 107.4918ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.1547 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000006 Message=Request finished in 62.6579ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.1547 Level=INFO RequestId=0HM2Q3SO2FLUR:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.1687 Level=INFO RequestId=0HM2Q3SO2FLUP:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.1687 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.1687 Level=INFO RequestId=0HM2Q3SO2FLUS:00000005 Message=Request finished in 26.5652ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.1860 Level=INFO RequestId=0HM2Q3SO2FLUS:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.1860 Level=INFO RequestId=0HM2Q3SO2FLUP:00000007 Message=Request finished in 27.5183ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.1860 Level=INFO RequestId=0HM2Q3SO2FLUR:00000005 Message=Request finished in 43.4769ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.1860 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000C Message=Request finished in 36.7334ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.1860 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.2152 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.2386 Level=INFO RequestId=0HM2Q3SO2FLUS:00000006 Message=Request finished in 36.0255ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.2621 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000D Message=Request finished in 44.2323ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.2930 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000007 Message=Request finished in 48.9778ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.2988 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.2988 Level=INFO RequestId=0HM2Q3SO2FLUR:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.2988 Level=INFO RequestId=0HM2Q3SO2FLUP:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.3208 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000E Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.3208 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000D Message=Request finished in 37.6856ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.3328 Level=INFO RequestId=0HM2Q3SO2FLUS:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.3699 Level=INFO RequestId=0HM2Q3SO2FLUR:00000006 Message=Request finished in 37.0881ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.3828 Level=INFO RequestId=0HM2Q3SO2FLUP:00000008 Message=Request finished in 71.8919ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.3917 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000E Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.4023 Level=INFO RequestId=0HM2Q3SO2FLUP:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.4023 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000E Message=Request finished in 77.412ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.4023 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.4284 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000E Message=Request finished in 38.8904ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.4414 Level=INFO RequestId=0HM2Q3SO2FLUS:00000007 Message=Request finished in 85.4485ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.4599 Level=INFO RequestId=0HM2Q3SO2FLUP:00000009 Message=Request finished in 48.463ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.4599 Level=INFO RequestId=0HM2Q3SO2FLUS:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.4731 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.4840 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000F Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.4994 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000008 Message=Request finished in 139.1127ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.5217 Level=INFO RequestId=0HM2Q3SO2FLUS:00000008 Message=Request finished in 38.652ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.5217 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000A Message=Request finished in 33.2205ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.5318 Level=INFO RequestId=0HM2Q3SO2FLUS:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.5318 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.5318 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.5650 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000F Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.5902 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000B Message=Request finished in 32.0668ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.6164 Level=INFO RequestId=0HM2Q3SO2FLUS:00000009 Message=Request finished in 42.4501ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.6164 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000009 Message=Request finished in 63.8327ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.6164 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.6254 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.6534 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.6770 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000A Message=Request finished in 15.2899ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.6870 Level=INFO RequestId=0HM2Q3SO2FLUN:0000000F Message=Request finished in 131.9634ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.6998 Level=INFO RequestId=0HM2Q3SO2FLUO:0000000F Message=Request finished in 182.083ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.7196 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000C Message=Request finished in 76.0973ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.7196 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000A Message=Request finished in 68.03ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.7196 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.7196 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.7563 Level=INFO RequestId=0HM2Q3SO2FLUN:00000010 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.7827 Level=INFO RequestId=0HM2Q3SO2FLUO:00000010 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.7827 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000D Message=Request finished in 32.8062ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.8000 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.8155 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000E Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.8155 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000B Message=Request finished in 63.9204ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.8344 Level=INFO RequestId=0HM2Q3SO2FLUN:00000010 Message=Request finished in 104.3599ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.8943 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000E Message=Request finished in 37.4642ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.9333 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.9397 Level=INFO RequestId=0HM2Q3SO2FLUN:00000011 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.9397 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000F Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:54.9717 Level=INFO RequestId=0HM2Q3SO2FLUO:00000010 Message=Request finished in 98.6082ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:54.9907 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000C Message=Request finished in 129.5978ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.0142 Level=INFO RequestId=0HM2Q3SO2FLUP:0000000F Message=Request finished in 49.107ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.0142 Level=INFO RequestId=0HM2Q3SO2FLUN:00000011 Message=Request finished in 121.0131ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.0142 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.0285 Level=INFO RequestId=0HM2Q3SO2FLUN:00000012 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.0285 Level=INFO RequestId=0HM2Q3SO2FLUP:00000010 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.0285 Level=INFO RequestId=0HM2Q3SO2FLUO:00000011 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.0616 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000B Message=Request finished in 157.2441ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.0917 Level=INFO RequestId=0HM2Q3SO2FLUP:00000010 Message=Request finished in 15.1925ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.1315 Level=INFO RequestId=0HM2Q3SO2FLUN:00000012 Message=Request finished in 20.2994ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.1315 Level=INFO RequestId=0HM2Q3SO2FLUP:00000011 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.1378 Level=INFO RequestId=0HM2Q3SO2FLUN:00000013 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.1646 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000D Message=Request finished in 37.7959ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.5257 Level=INFO RequestId=0HM2Q3SO2FLUO:00000011 Message=Request finished in 96.6639ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.5823 Level=INFO RequestId=0HM2Q3SO2FLUP:00000011 Message=Request finished in 38.5159ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.5823 Level=INFO RequestId=0HM2Q3SO2FLUN:00000013 Message=Request finished in 39.512ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.5953 Level=INFO RequestId=0HM2Q3SO2FLUP:00000012 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6067 Level=INFO RequestId=0HM2Q3SO2FLUN:00000014 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6067 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000E Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6067 Level=INFO RequestId=0HM2Q3SO2FLUO:00000012 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6255 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6383 Level=INFO RequestId=0HM2Q3SO2FLUP:00000012 Message=Request finished in 35.7463ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.6663 Level=INFO RequestId=0HM2Q3SO2FLUN:00000014 Message=Request finished in 36.1102ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.6704 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000E Message=Request finished in 462.2245ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.6704 Level=INFO RequestId=0HM2Q3SO2FLUP:00000013 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6704 Level=INFO RequestId=0HM2Q3SO2FLUN:00000015 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.6704 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000F Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.7138 Level=INFO RequestId=0HM2Q3SO2FLUO:00000012 Message=Request finished in 106.9662ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.7416 Level=INFO RequestId=0HM2Q3SO2FLUP:00000013 Message=Request finished in 17.0922ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.7552 Level=INFO RequestId=0HM2Q3SO2FLUN:00000015 Message=Request finished in 18.4798ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.7552 Level=INFO RequestId=0HM2Q3SO2FLUP:00000014 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.7697 Level=INFO RequestId=0HM2Q3SO2FLUN:00000016 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.7697 Level=INFO RequestId=0HM2Q3SO2FLUQ:0000000F Message=Request finished in 73.0704ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.8041 Level=INFO RequestId=0HM2Q3SO2FLUO:00000013 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.8212 Level=INFO RequestId=0HM2Q3SO2FLUN:00000016 Message=Request finished in 27.395ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.8345 Level=INFO RequestId=0HM2Q3SO2FLUP:00000014 Message=Request finished in 27.9421ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.8345 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000010 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.8448 Level=INFO RequestId=0HM2Q3SO2FLUP:00000015 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.8448 Level=INFO RequestId=0HM2Q3SO2FLUN:00000017 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.8448 Level=INFO RequestId=0HM2Q3SO2FLUO:00000013 Message=Request finished in 109.8707ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.8613 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000C Message=Request finished in 585.3416ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.8762 Level=INFO RequestId=0HM2Q3SO2FLUO:00000014 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.8925 Level=INFO RequestId=0HM2Q3SO2FLUP:00000015 Message=Request finished in 25.9829ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.9155 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000010 Message=Request finished in 80.2659ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.9155 Level=INFO RequestId=0HM2Q3SO2FLUP:00000016 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.9403 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000011 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.9403 Level=INFO RequestId=0HM2Q3SO2FLUN:00000017 Message=Request finished in 25.1316ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.9403 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.9403 Level=INFO RequestId=0HM2Q3SO2FLUR:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:35:55.9518 Level=INFO RequestId=0HM2Q3SO2FLUO:00000014 Message=Request finished in 96.5636ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.9767 Level=INFO RequestId=0HM2Q3SO2FLUQ:00000011 Message=Request finished in 38.3702ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:55.9884 Level=INFO RequestId=0HM2Q3SO2FLUS:0000000D Message=Request finished in 115.338ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:35:56.0093 Level=INFO RequestId=0HM2Q3SO2FLUN:00000018 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 14:35:56.0180 Level=INFO RequestId=0HM2Q3SO2FLUP:00000016 Message=Request finished in 97.1377ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:37:57.5137 Level=INFO RequestId=0HM2Q400F596E:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:37:58.1682 Level=INFO RequestId=0HM2Q400F596E:00000001 Message=Request finished in 659.6861ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:39:47.3551 Level=INFO RequestId=0HM2Q400F596F:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:39:50.2338 Level=INFO RequestId=0HM2Q400F596F:00000001 Message=Request finished in 2868.1895ms 401 
+TimeStamp=2020-09-16 14:39:53.3397 Level=INFO RequestId=0HM2Q400F596F:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:39:53.3552 Level=INFO RequestId=0HM2Q400F596F:00000002 Message=Request finished in 6.3208ms 200 application/javascript
+TimeStamp=2020-09-16 14:39:54.6610 Level=INFO RequestId=0HM2Q400F596F:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:39:54.7014 Level=INFO RequestId=0HM2Q400F596F:00000003 Message=Request finished in 23.4332ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:39:56.7639 Level=INFO RequestId=0HM2Q400F596F:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:39:56.7834 Level=INFO RequestId=0HM2Q400F596F:00000004 Message=Request finished in 20.0581ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:39:58.8456 Level=INFO RequestId=0HM2Q400F596F:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:39:58.8456 Level=INFO RequestId=0HM2Q400F596F:00000005 Message=Request finished in 9.8005ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:00.8958 Level=INFO RequestId=0HM2Q400F596F:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:00.9168 Level=INFO RequestId=0HM2Q400F596F:00000006 Message=Request finished in 20.3334ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:02.9453 Level=INFO RequestId=0HM2Q400F596F:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:02.9618 Level=INFO RequestId=0HM2Q400F596F:00000007 Message=Request finished in 12.0839ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:05.7932 Level=INFO RequestId=0HM2Q400F596F:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:05.8582 Level=INFO RequestId=0HM2Q400F596F:00000008 Message=Request finished in 522.0406ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:07.8886 Level=INFO RequestId=0HM2Q400F596F:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:07.9116 Level=INFO RequestId=0HM2Q400F596F:00000009 Message=Request finished in 22.7154ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:09.9523 Level=INFO RequestId=0HM2Q400F596F:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:09.9713 Level=INFO RequestId=0HM2Q400F596F:0000000A Message=Request finished in 21.1713ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:12.0137 Level=INFO RequestId=0HM2Q400F596F:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:12.0433 Level=INFO RequestId=0HM2Q400F596F:0000000B Message=Request finished in 26.3139ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:14.1060 Level=INFO RequestId=0HM2Q400F596F:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:14.1220 Level=INFO RequestId=0HM2Q400F596F:0000000C Message=Request finished in 27.2171ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:16.1419 Level=INFO RequestId=0HM2Q400F596F:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:16.1419 Level=INFO RequestId=0HM2Q400F596F:0000000D Message=Request finished in 6.9994ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:18.1770 Level=INFO RequestId=0HM2Q400F596F:0000000E Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:18.1940 Level=INFO RequestId=0HM2Q400F596F:0000000E Message=Request finished in 16.3452ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:20.2504 Level=INFO RequestId=0HM2Q400F596F:0000000F Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:20.2793 Level=INFO RequestId=0HM2Q400F596F:0000000F Message=Request finished in 23.9115ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:22.3323 Level=INFO RequestId=0HM2Q400F596F:00000010 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:22.3323 Level=INFO RequestId=0HM2Q400F596F:00000010 Message=Request finished in 14.1359ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:24.4760 Level=INFO RequestId=0HM2Q400F596F:00000011 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:24.5740 Level=INFO RequestId=0HM2Q400F596F:00000011 Message=Request finished in 60.5338ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:26.6092 Level=INFO RequestId=0HM2Q400F596F:00000012 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:26.6316 Level=INFO RequestId=0HM2Q400F596F:00000012 Message=Request finished in 14.2184ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:28.6566 Level=INFO RequestId=0HM2Q400F596F:00000013 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:28.6716 Level=INFO RequestId=0HM2Q400F596F:00000013 Message=Request finished in 13.768ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:30.6968 Level=INFO RequestId=0HM2Q400F596F:00000014 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:30.7132 Level=INFO RequestId=0HM2Q400F596F:00000014 Message=Request finished in 16.1964ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:32.7325 Level=INFO RequestId=0HM2Q400F596F:00000015 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:32.7450 Level=INFO RequestId=0HM2Q400F596F:00000015 Message=Request finished in 8.9211ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:34.7656 Level=INFO RequestId=0HM2Q400F596F:00000016 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:34.7811 Level=INFO RequestId=0HM2Q400F596F:00000016 Message=Request finished in 10.3002ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:36.7999 Level=INFO RequestId=0HM2Q400F596F:00000017 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:36.8153 Level=INFO RequestId=0HM2Q400F596F:00000017 Message=Request finished in 9.3804ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:38.8329 Level=INFO RequestId=0HM2Q400F596F:00000018 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:38.8329 Level=INFO RequestId=0HM2Q400F596F:00000018 Message=Request finished in 9.6093ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:40.8613 Level=INFO RequestId=0HM2Q400F596F:00000019 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:40.8758 Level=INFO RequestId=0HM2Q400F596F:00000019 Message=Request finished in 9.7085ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:42.9090 Level=INFO RequestId=0HM2Q400F596F:0000001A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:42.9265 Level=INFO RequestId=0HM2Q400F596F:0000001A Message=Request finished in 13.6533ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:45.0496 Level=INFO RequestId=0HM2Q400F596F:0000001B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:45.0496 Level=INFO RequestId=0HM2Q400F596F:0000001B Message=Request finished in 14.8362ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:47.0932 Level=INFO RequestId=0HM2Q400F596F:0000001C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:47.1192 Level=INFO RequestId=0HM2Q400F596F:0000001C Message=Request finished in 25.1608ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:49.1570 Level=INFO RequestId=0HM2Q400F596F:0000001D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:49.1715 Level=INFO RequestId=0HM2Q400F596F:0000001D Message=Request finished in 11.0045ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:51.2085 Level=INFO RequestId=0HM2Q400F596F:0000001E Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:51.2250 Level=INFO RequestId=0HM2Q400F596F:0000001E Message=Request finished in 10.4043ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:53.2650 Level=INFO RequestId=0HM2Q400F596F:0000001F Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:53.2902 Level=INFO RequestId=0HM2Q400F596F:0000001F Message=Request finished in 17.5578ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:55.3148 Level=INFO RequestId=0HM2Q400F596F:00000020 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:55.3314 Level=INFO RequestId=0HM2Q400F596F:00000020 Message=Request finished in 11.3005ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:57.3548 Level=INFO RequestId=0HM2Q400F596F:00000021 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:57.3630 Level=INFO RequestId=0HM2Q400F596F:00000021 Message=Request finished in 7.3648ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:40:59.3881 Level=INFO RequestId=0HM2Q400F596F:00000022 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:40:59.3971 Level=INFO RequestId=0HM2Q400F596F:00000022 Message=Request finished in 8.9896ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:41:01.4181 Level=INFO RequestId=0HM2Q400F596F:00000023 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:41:01.4298 Level=INFO RequestId=0HM2Q400F596F:00000023 Message=Request finished in 12.5567ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:41:12.9704 Level=INFO RequestId=0HM2Q400F596F:00000024 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 14:41:15.2420 Level=INFO RequestId=0HM2Q400F596F:00000024 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 14:41:15.3864 Level=INFO RequestId=0HM2Q400F596F:00000024 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 14:41:15.4525 Level=INFO RequestId=0HM2Q400F596F:00000024 Message=Request finished in 2418.7292ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 14:41:15.8402 Level=INFO RequestId=0HM2Q400F596F:00000025 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-16 14:41:16.3849 Level=INFO RequestId=0HM2Q400F596F:00000025 Message=Request finished in 544.495ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-16 14:41:25.4509 Level=INFO RequestId=0HM2Q400F596F:00000026 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-16 14:51:10.1609 Level=INFO RequestId=0HM2Q47CLEL5P:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:51:10.1609 Level=INFO RequestId=0HM2Q47CLEL5Q:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:51:10.2240 Level=INFO RequestId=0HM2Q47CLEL5Q:00000001 Message=Request finished in 69.6625ms 200 
+TimeStamp=2020-09-16 14:51:16.1819 Level=INFO RequestId=0HM2Q47CLEL5Q:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:51:16.1819 Level=INFO RequestId=0HM2Q47CLEL5P:00000001 Message=Request finished in 6037.5145ms 401 
+TimeStamp=2020-09-16 14:51:16.1979 Level=INFO RequestId=0HM2Q47CLEL5Q:00000002 Message=Request finished in 15.0365ms 200 application/javascript
+TimeStamp=2020-09-16 14:51:17.4115 Level=INFO RequestId=0HM2Q47CLEL5P:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:18.0582 Level=INFO RequestId=0HM2Q47CLEL5P:00000002 Message=Request finished in 658.7881ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:18.6361 Level=INFO RequestId=0HM2Q47CLEL5Q:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:18.6510 Level=INFO RequestId=0HM2Q47CLEL5Q:00000003 Message=Request finished in 10.6534ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:20.6751 Level=INFO RequestId=0HM2Q47CLEL5P:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:20.6751 Level=INFO RequestId=0HM2Q47CLEL5P:00000003 Message=Request finished in 9.7144ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:21.3947 Level=INFO RequestId=0HM2Q47CLEL5Q:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:21.4094 Level=INFO RequestId=0HM2Q47CLEL5Q:00000004 Message=Request finished in 15.3414ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:22.7075 Level=INFO RequestId=0HM2Q47CLEL5P:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:22.7075 Level=INFO RequestId=0HM2Q47CLEL5P:00000004 Message=Request finished in 10.9356ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:22.9724 Level=INFO RequestId=0HM2Q47CLEL5Q:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 14:51:27.2001 Level=INFO RequestId=0HM2Q47CLEL5P:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:27.6153 Level=INFO RequestId=0HM2Q47CLEL5R:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:27.6733 Level=INFO RequestId=0HM2Q47CLEL5P:00000005 Message=Request finished in 327.1314ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:27.7048 Level=INFO RequestId=0HM2Q47CLEL5R:00000001 Message=Request finished in 468.9572ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:27.8621 Level=INFO RequestId=0HM2Q47CLEL5Q:00000005 Message=Request finished in 4830.3558ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:29.7001 Level=INFO RequestId=0HM2Q47CLEL5P:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:29.7142 Level=INFO RequestId=0HM2Q47CLEL5P:00000006 Message=Request finished in 8.9807ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:31.9038 Level=INFO RequestId=0HM2Q47CLEL5R:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:35.7123 Level=INFO RequestId=0HM2Q47CLEL5Q:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:35.7123 Level=INFO RequestId=0HM2Q47CLEL5R:00000002 Message=Request finished in 3939.841ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:35.7541 Level=INFO RequestId=0HM2Q47CLEL5P:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:35.7726 Level=INFO RequestId=0HM2Q47CLEL5Q:00000006 Message=Request finished in 52.99ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:35.7965 Level=INFO RequestId=0HM2Q47CLEL5P:00000007 Message=Request finished in 25.813ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:37.8612 Level=INFO RequestId=0HM2Q47CLEL5R:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:37.8916 Level=INFO RequestId=0HM2Q47CLEL5R:00000003 Message=Request finished in 14.1531ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:39.9299 Level=INFO RequestId=0HM2Q47CLEL5Q:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:39.9451 Level=INFO RequestId=0HM2Q47CLEL5Q:00000007 Message=Request finished in 8.0638ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:41.9646 Level=INFO RequestId=0HM2Q47CLEL5P:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:41.9765 Level=INFO RequestId=0HM2Q47CLEL5P:00000008 Message=Request finished in 9.7614ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:44.1020 Level=INFO RequestId=0HM2Q47CLEL5R:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:44.1139 Level=INFO RequestId=0HM2Q47CLEL5R:00000004 Message=Request finished in 36.9564ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:46.1516 Level=INFO RequestId=0HM2Q47CLEL5Q:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:46.1680 Level=INFO RequestId=0HM2Q47CLEL5Q:00000008 Message=Request finished in 14.9418ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:48.1905 Level=INFO RequestId=0HM2Q47CLEL5P:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:48.1905 Level=INFO RequestId=0HM2Q47CLEL5P:00000009 Message=Request finished in 7.9397ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:50.2221 Level=INFO RequestId=0HM2Q47CLEL5R:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:50.2221 Level=INFO RequestId=0HM2Q47CLEL5R:00000005 Message=Request finished in 7.9308ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:52.2571 Level=INFO RequestId=0HM2Q47CLEL5Q:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:52.2725 Level=INFO RequestId=0HM2Q47CLEL5Q:00000009 Message=Request finished in 15.9311ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:54.2907 Level=INFO RequestId=0HM2Q47CLEL5P:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:54.3003 Level=INFO RequestId=0HM2Q47CLEL5P:0000000A Message=Request finished in 7.3478ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:56.3190 Level=INFO RequestId=0HM2Q47CLEL5R:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:56.3190 Level=INFO RequestId=0HM2Q47CLEL5R:00000006 Message=Request finished in 10.6378ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:51:58.3479 Level=INFO RequestId=0HM2Q47CLEL5Q:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:51:58.3479 Level=INFO RequestId=0HM2Q47CLEL5Q:0000000A Message=Request finished in 9.7881ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:00.3732 Level=INFO RequestId=0HM2Q47CLEL5P:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:00.3873 Level=INFO RequestId=0HM2Q47CLEL5P:0000000B Message=Request finished in 9.4739ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:02.4059 Level=INFO RequestId=0HM2Q47CLEL5R:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:02.4200 Level=INFO RequestId=0HM2Q47CLEL5R:00000007 Message=Request finished in 11.4806ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:04.4377 Level=INFO RequestId=0HM2Q47CLEL5Q:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:04.4489 Level=INFO RequestId=0HM2Q47CLEL5Q:0000000B Message=Request finished in 10.4936ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:06.4801 Level=INFO RequestId=0HM2Q47CLEL5P:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:06.4910 Level=INFO RequestId=0HM2Q47CLEL5P:0000000C Message=Request finished in 11.6729ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:08.6039 Level=INFO RequestId=0HM2Q47CLEL5R:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:08.6196 Level=INFO RequestId=0HM2Q47CLEL5R:00000008 Message=Request finished in 19.0953ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:10.6659 Level=INFO RequestId=0HM2Q47CLEL5Q:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:10.6776 Level=INFO RequestId=0HM2Q47CLEL5Q:0000000C Message=Request finished in 8.9967ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:47.5229 Level=INFO RequestId=0HM2Q489L5KA1:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 14:52:47.5229 Level=INFO RequestId=0HM2Q489L5KA2:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 14:52:47.5887 Level=INFO RequestId=0HM2Q489L5KA2:00000001 Message=Request finished in 93.0575ms 200 
+TimeStamp=2020-09-16 14:52:47.7657 Level=INFO RequestId=0HM2Q489L5KA1:00000001 Message=Request finished in 265.2804ms 401 
+TimeStamp=2020-09-16 14:52:50.5266 Level=INFO RequestId=0HM2Q489L5KA2:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:52:50.5472 Level=INFO RequestId=0HM2Q489L5KA2:00000002 Message=Request finished in 9.5055ms 200 application/javascript
+TimeStamp=2020-09-16 14:52:51.9917 Level=INFO RequestId=0HM2Q489L5KA1:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:52.6883 Level=INFO RequestId=0HM2Q489L5KA1:00000002 Message=Request finished in 698.0448ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:53.4569 Level=INFO RequestId=0HM2Q489L5KA2:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:53.4942 Level=INFO RequestId=0HM2Q489L5KA2:00000003 Message=Request finished in 27.8866ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:55.5312 Level=INFO RequestId=0HM2Q489L5KA1:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:55.5419 Level=INFO RequestId=0HM2Q489L5KA1:00000003 Message=Request finished in 10.246ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:57.5698 Level=INFO RequestId=0HM2Q489L5KA2:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:57.5898 Level=INFO RequestId=0HM2Q489L5KA2:00000004 Message=Request finished in 17.1338ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:59.6166 Level=INFO RequestId=0HM2Q489L5KA1:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:52:59.6279 Level=INFO RequestId=0HM2Q489L5KA1:00000004 Message=Request finished in 11.6436ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:52:59.8509 Level=INFO RequestId=0HM2Q489L5KA2:00000005 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/  
+TimeStamp=2020-09-16 14:52:59.8748 Level=INFO RequestId=0HM2Q489L5KA2:00000005 Message=The file /index.html was not modified
+TimeStamp=2020-09-16 14:52:59.8981 Level=INFO RequestId=0HM2Q489L5KA2:00000005 Message=Request finished in 29.6106ms 304 text/html
+TimeStamp=2020-09-16 14:52:59.9318 Level=INFO RequestId=0HM2Q489L5KA1:00000005 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 14:52:59.9318 Level=INFO RequestId=0HM2Q489L5KA1:00000005 Message=Request finished in 2.5689ms 200 application/javascript
+TimeStamp=2020-09-16 14:53:00.3984 Level=INFO RequestId=0HM2Q489L5KA2:00000006 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/favicon.png  
+TimeStamp=2020-09-16 14:53:00.4124 Level=INFO RequestId=0HM2Q489L5KA2:00000006 Message=Sending file. Request path: '/favicon.png'. Physical path: 'N/A'
+TimeStamp=2020-09-16 14:53:00.4124 Level=INFO RequestId=0HM2Q489L5KA2:00000006 Message=Request finished in 22.1045ms 200 image/png
+TimeStamp=2020-09-16 14:53:00.7172 Level=INFO RequestId=0HM2Q489L5KA1:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:00.7383 Level=INFO RequestId=0HM2Q489L5KA1:00000006 Message=Request finished in 20.3083ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:02.1157 Level=INFO RequestId=0HM2Q489L5KA2:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 14:53:04.6821 Level=INFO RequestId=0HM2Q489L5KA1:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:04.7136 Level=INFO RequestId=0HM2Q489L5KA3:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:04.7800 Level=INFO RequestId=0HM2Q489L5KA1:00000007 Message=Request finished in 166.7105ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:05.0589 Level=INFO RequestId=0HM2Q489L5KA3:00000001 Message=Request finished in 308.0108ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:06.0374 Level=INFO RequestId=0HM2Q489L5KA2:00000007 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 14:53:06.7572 Level=INFO RequestId=0HM2Q489L5KA2:00000007 Message=Executed DbCommand (591ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 14:53:09.9721 Level=INFO RequestId=0HM2Q489L5KA1:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:09.9721 Level=INFO RequestId=0HM2Q489L5KA3:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:10.0172 Level=INFO RequestId=0HM2Q489L5KA1:00000008 Message=Request finished in 758.675ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:10.0610 Level=INFO RequestId=0HM2Q489L5KA3:00000002 Message=Request finished in 824.7536ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:12.8835 Level=INFO RequestId=0HM2Q489L5KA1:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:12.9948 Level=INFO RequestId=0HM2Q489L5KA1:00000009 Message=Request finished in 101.081ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:21.3844 Level=INFO RequestId=0HM2Q489L5KA1:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:21.3844 Level=INFO RequestId=0HM2Q489L5KA3:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:21.4052 Level=INFO RequestId=0HM2Q489L5KA4:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:21.4052 Level=INFO RequestId=0HM2Q489L5KA1:0000000A Message=Request finished in 3859.4648ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:21.4075 Level=INFO RequestId=0HM2Q489L5KA3:00000003 Message=Request finished in 3863.456ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:21.4254 Level=INFO RequestId=0HM2Q489L5KA5:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:21.4254 Level=INFO RequestId=0HM2Q489L5KA4:00000001 Message=Request finished in 28.0903ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:21.4979 Level=INFO RequestId=0HM2Q489L5KA5:00000001 Message=Request finished in 42.9994ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:21.8975 Level=INFO RequestId=0HM2Q489L5KA2:00000007 Message=Executed DbCommand (475ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 14:53:21.9401 Level=INFO RequestId=0HM2Q489L5KA2:00000007 Message=Request finished in 19822.1601ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 14:53:23.5339 Level=INFO RequestId=0HM2Q489L5KA1:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 14:53:23.5339 Level=INFO RequestId=0HM2Q489L5KA1:0000000B Message=Request finished in 8.3594ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:34.5741 Level=INFO RequestId=0HM2Q4IPIVQVN:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:11:34.5741 Level=INFO RequestId=0HM2Q4IPIVQVL:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:11:34.5741 Level=INFO RequestId=0HM2Q4IPIVQVK:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:11:34.5741 Level=INFO RequestId=0HM2Q4IPIVQVM:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:11:34.6522 Level=INFO RequestId=0HM2Q4IPIVQVL:00000001 Message=Request finished in 78.9302ms 200 
+TimeStamp=2020-09-16 15:11:34.6845 Level=INFO RequestId=0HM2Q4IPIVQVK:00000001 Message=Request finished in 122.7372ms 200 application/javascript
+TimeStamp=2020-09-16 15:11:34.6845 Level=INFO RequestId=0HM2Q4IPIVQVM:00000001 Message=Request finished in 122.8186ms 200 application/javascript
+TimeStamp=2020-09-16 15:11:41.5538 Level=INFO RequestId=0HM2Q4IPIVQVO:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:41.5538 Level=INFO RequestId=0HM2Q4IPIVQVN:00000001 Message=Request finished in 6994.2139ms 401 
+TimeStamp=2020-09-16 15:11:41.5664 Level=INFO RequestId=0HM2Q4IPIVQVM:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:41.5664 Level=INFO RequestId=0HM2Q4IPIVQVL:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:41.6031 Level=INFO RequestId=0HM2Q4IPIVQVK:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:42.1766 Level=INFO RequestId=0HM2Q4IPIVQVO:00000001 Message=Request finished in 599.0079ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:42.1766 Level=INFO RequestId=0HM2Q4IPIVQVL:00000002 Message=Request finished in 585.5784ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:42.2052 Level=INFO RequestId=0HM2Q4IPIVQVM:00000002 Message=Request finished in 589.8168ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:42.2854 Level=INFO RequestId=0HM2Q4IPIVQVK:00000002 Message=Request finished in 580.4731ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:44.2897 Level=INFO RequestId=0HM2Q4IPIVQVN:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:44.3312 Level=INFO RequestId=0HM2Q4IPIVQVN:00000002 Message=Request finished in 36.5805ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:46.3530 Level=INFO RequestId=0HM2Q4IPIVQVL:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:46.3627 Level=INFO RequestId=0HM2Q4IPIVQVL:00000003 Message=Request finished in 9.6834ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:48.4160 Level=INFO RequestId=0HM2Q4IPIVQVK:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:48.4356 Level=INFO RequestId=0HM2Q4IPIVQVK:00000003 Message=Request finished in 34.6036ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:50.4675 Level=INFO RequestId=0HM2Q4IPIVQVM:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:50.4999 Level=INFO RequestId=0HM2Q4IPIVQVM:00000003 Message=Request finished in 27.4953ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:52.2579 Level=INFO RequestId=0HM2Q4IPIVQVO:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 98
+TimeStamp=2020-09-16 15:11:52.2958 Level=INFO RequestId=0HM2Q4IPIVQVO:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:11:52.5215 Level=INFO RequestId=0HM2Q4IPIVQVN:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:52.5326 Level=INFO RequestId=0HM2Q4IPIVQVN:00000003 Message=Request finished in 9.9037ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:52.7331 Level=INFO RequestId=0HM2Q4IPIVQVO:00000002 Message=Executed DbCommand (307ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 15:11:53.1117 Level=INFO RequestId=0HM2Q4IPIVQVO:00000002 Message=Executed DbCommand (264ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[DESCRIPTION], [x].[LabelId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoList] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 15:11:53.1549 Level=INFO RequestId=0HM2Q4IPIVQVO:00000002 Message=Request finished in 899.1534ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:54.5513 Level=INFO RequestId=0HM2Q4IPIVQVL:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:54.5513 Level=INFO RequestId=0HM2Q4IPIVQVL:00000004 Message=Request finished in 8.8087ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:56.5808 Level=INFO RequestId=0HM2Q4IPIVQVK:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:56.5808 Level=INFO RequestId=0HM2Q4IPIVQVK:00000004 Message=Request finished in 11.2779ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:11:58.6284 Level=INFO RequestId=0HM2Q4IPIVQVM:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:11:58.6284 Level=INFO RequestId=0HM2Q4IPIVQVM:00000004 Message=Request finished in 9.302ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:00.6710 Level=INFO RequestId=0HM2Q4IPIVQVN:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:00.6899 Level=INFO RequestId=0HM2Q4IPIVQVN:00000004 Message=Request finished in 19.1567ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:02.7452 Level=INFO RequestId=0HM2Q4IPIVQVO:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:02.7832 Level=INFO RequestId=0HM2Q4IPIVQVO:00000003 Message=Request finished in 34.5154ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:04.8105 Level=INFO RequestId=0HM2Q4IPIVQVL:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:04.8325 Level=INFO RequestId=0HM2Q4IPIVQVL:00000005 Message=Request finished in 7.0005ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:06.8594 Level=INFO RequestId=0HM2Q4IPIVQVK:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:06.8697 Level=INFO RequestId=0HM2Q4IPIVQVK:00000005 Message=Request finished in 10.1282ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:08.8927 Level=INFO RequestId=0HM2Q4IPIVQVM:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:08.8927 Level=INFO RequestId=0HM2Q4IPIVQVM:00000005 Message=Request finished in 12.3696ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:10.9252 Level=INFO RequestId=0HM2Q4IPIVQVN:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:10.9252 Level=INFO RequestId=0HM2Q4IPIVQVN:00000005 Message=Request finished in 10.7159ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:12.9622 Level=INFO RequestId=0HM2Q4IPIVQVO:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:12.9839 Level=INFO RequestId=0HM2Q4IPIVQVO:00000004 Message=Request finished in 10.3739ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:15.0102 Level=INFO RequestId=0HM2Q4IPIVQVL:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:15.0219 Level=INFO RequestId=0HM2Q4IPIVQVL:00000006 Message=Request finished in 13.4638ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:17.0525 Level=INFO RequestId=0HM2Q4IPIVQVK:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:17.0694 Level=INFO RequestId=0HM2Q4IPIVQVK:00000006 Message=Request finished in 15.1874ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:19.0881 Level=INFO RequestId=0HM2Q4IPIVQVM:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:19.1014 Level=INFO RequestId=0HM2Q4IPIVQVM:00000006 Message=Request finished in 11.4224ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:21.1205 Level=INFO RequestId=0HM2Q4IPIVQVN:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:21.1568 Level=INFO RequestId=0HM2Q4IPIVQVN:00000006 Message=Request finished in 14.5814ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:23.1813 Level=INFO RequestId=0HM2Q4IPIVQVO:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:23.2003 Level=INFO RequestId=0HM2Q4IPIVQVO:00000005 Message=Request finished in 10.2216ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:25.2191 Level=INFO RequestId=0HM2Q4IPIVQVL:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:25.2319 Level=INFO RequestId=0HM2Q4IPIVQVL:00000007 Message=Request finished in 10.7857ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:27.2509 Level=INFO RequestId=0HM2Q4IPIVQVK:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:27.2509 Level=INFO RequestId=0HM2Q4IPIVQVK:00000007 Message=Request finished in 14.2231ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:29.2877 Level=INFO RequestId=0HM2Q4IPIVQVM:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:29.3025 Level=INFO RequestId=0HM2Q4IPIVQVM:00000007 Message=Request finished in 14.4524ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:31.3311 Level=INFO RequestId=0HM2Q4IPIVQVN:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:12:31.3311 Level=INFO RequestId=0HM2Q4IPIVQVN:00000007 Message=Request finished in 10.4975ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:12:33.0921 Level=INFO RequestId=0HM2Q4IPIVQVO:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:13:00.8074 Level=INFO RequestId=0HM2Q4IPIVQVP:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:00.8330 Level=INFO RequestId=0HM2Q4IPIVQVM:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:00.8730 Level=INFO RequestId=0HM2Q4IPIVQVK:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:00.9043 Level=INFO RequestId=0HM2Q4IPIVQVP:00000001 Message=Request finished in 146.9392ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.1287 Level=INFO RequestId=0HM2Q4IPIVQVM:00000008 Message=Request finished in 121.7689ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.1764 Level=INFO RequestId=0HM2Q4IPIVQVL:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:01.4123 Level=INFO RequestId=0HM2Q4IPIVQVN:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:01.4123 Level=INFO RequestId=0HM2Q4IPIVQVL:00000008 Message=Request finished in 287.5537ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.6308 Level=INFO RequestId=0HM2Q4IPIVQVK:00000008 Message=Request finished in 96.7975ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.7216 Level=INFO RequestId=0HM2Q4IPIVQVN:00000008 Message=Request finished in 504.8896ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.8890 Level=INFO RequestId=0HM2Q4IPIVQVL:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:01.9113 Level=INFO RequestId=0HM2Q4IPIVQVM:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:01.9333 Level=INFO RequestId=0HM2Q4IPIVQVP:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:01.9557 Level=INFO RequestId=0HM2Q4IPIVQVO:00000006 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:13:01.9557 Level=INFO RequestId=0HM2Q4IPIVQVL:00000009 Message=Request finished in 230.5274ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.9557 Level=INFO RequestId=0HM2Q4IPIVQVM:00000009 Message=Request finished in 220.1695ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:01.9712 Level=INFO RequestId=0HM2Q4IPIVQVK:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:01.9875 Level=INFO RequestId=0HM2Q4IPIVQVN:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:02.0232 Level=INFO RequestId=0HM2Q4IPIVQVK:00000009 Message=Request finished in 24.046ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.0232 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:02.0396 Level=INFO RequestId=0HM2Q4IPIVQVN:00000009 Message=Request finished in 50.5225ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.0396 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000A Message=Request finished in 18.6636ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.0396 Level=INFO RequestId=0HM2Q4IPIVQVL:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:02.0515 Level=INFO RequestId=0HM2Q4IPIVQVP:00000002 Message=Request finished in 308.3238ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.0678 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:02.0814 Level=INFO RequestId=0HM2Q4IPIVQVL:0000000A Message=Request finished in 15.9459ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.0976 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000A Message=Request finished in 38.7278ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.0976 Level=INFO RequestId=0HM2Q4IPIVQVN:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:02.0976 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:02.1164 Level=INFO RequestId=0HM2Q4IPIVQVN:0000000A Message=Request finished in 23.2812ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.1309 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000B Message=Request finished in 21.4419ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:02.2435 Level=INFO RequestId=0HM2Q4IPIVQVO:00000006 Message=Executed DbCommand (277ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 15:13:19.9892 Level=INFO RequestId=0HM2Q4IPIVQVL:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:19.9892 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:19.9892 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:20.0046 Level=INFO RequestId=0HM2Q4IPIVQVL:0000000B Message=Request finished in 13.1469ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.0046 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000C Message=Request finished in 12.2426ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.0046 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000B Message=Request finished in 14.7279ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.0406 Level=INFO RequestId=0HM2Q4IPIVQVP:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:20.0406 Level=INFO RequestId=0HM2Q4IPIVQVN:0000000B Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:20.0563 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:20.0563 Level=INFO RequestId=0HM2Q4IPIVQVP:00000003 Message=Request finished in 43.0512ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.0563 Level=INFO RequestId=0HM2Q4IPIVQVN:0000000B Message=Request finished in 42.2142ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.0726 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:20.0726 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000C Message=Request finished in 26.932ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.0995 Level=INFO RequestId=0HM2Q4IPIVQVL:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:20.0995 Level=INFO RequestId=0HM2Q4IPIVQVM:0000000D Message=Request finished in 22.1073ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.1253 Level=INFO RequestId=0HM2Q4IPIVQVL:0000000C Message=Request finished in 40.1485ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:20.2652 Level=INFO RequestId=0HM2Q4IPIVQVO:00000006 Message=Executed DbCommand (236ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 15:13:20.3265 Level=INFO RequestId=0HM2Q4IPIVQVO:00000006 Message=Request finished in 47197.7382ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:22.1300 Level=INFO RequestId=0HM2Q4IPIVQVN:0000000C Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:22.1453 Level=INFO RequestId=0HM2Q4IPIVQVN:0000000C Message=Request finished in 15.8705ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:24.1634 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000D Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:24.1763 Level=INFO RequestId=0HM2Q4IPIVQVK:0000000D Message=Request finished in 10.5252ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:13:26.1990 Level=INFO RequestId=0HM2Q4IPIVQVP:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:13:26.2190 Level=INFO RequestId=0HM2Q4IPIVQVP:00000004 Message=Request finished in 17.8808ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:15:50.5017 Level=INFO RequestId=0HM2Q4L5ROFMK:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:15:50.5017 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:15:50.6432 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000001 Message=Request finished in 128.4076ms 200 
+TimeStamp=2020-09-16 15:15:58.6816 Level=INFO RequestId=0HM2Q4L5ROFMK:00000001 Message=Request finished in 8188.5192ms 401 
+TimeStamp=2020-09-16 15:16:02.6210 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:16:02.6372 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000002 Message=Request finished in 13.2155ms 200 application/javascript
+TimeStamp=2020-09-16 15:16:04.1126 Level=INFO RequestId=0HM2Q4L5ROFMK:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:04.7864 Level=INFO RequestId=0HM2Q4L5ROFMK:00000002 Message=Request finished in 674.1798ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:05.5361 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:05.5507 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000003 Message=Request finished in 11.8127ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:07.5764 Level=INFO RequestId=0HM2Q4L5ROFMK:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:07.5901 Level=INFO RequestId=0HM2Q4L5ROFMK:00000003 Message=Request finished in 12.7769ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:09.6184 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:09.6323 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000004 Message=Request finished in 11.0888ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:11.6551 Level=INFO RequestId=0HM2Q4L5ROFMK:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:11.6733 Level=INFO RequestId=0HM2Q4L5ROFMK:00000004 Message=Request finished in 16.5053ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:12.8192 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:16:26.4812 Level=INFO RequestId=0HM2Q4L5ROFML:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.4903 Level=INFO RequestId=0HM2Q4L5ROFMN:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.4903 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000005 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:16:26.4903 Level=INFO RequestId=0HM2Q4L5ROFMM:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.5165 Level=INFO RequestId=0HM2Q4L5ROFMN:00000001 Message=Request finished in 41.9314ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:26.5247 Level=INFO RequestId=0HM2Q4L5ROFMM:00000001 Message=Request finished in 53.404ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:26.5405 Level=INFO RequestId=0HM2Q4L5ROFML:00000001 Message=Request finished in 53.8027ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:26.5405 Level=INFO RequestId=0HM2Q4L5ROFMO:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.5641 Level=INFO RequestId=0HM2Q4L5ROFMK:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.6409 Level=INFO RequestId=0HM2Q4L5ROFMO:00000001 Message=Request finished in 62.8436ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:26.6409 Level=INFO RequestId=0HM2Q4L5ROFMK:00000005 Message=Request finished in 63.0244ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:26.6549 Level=INFO RequestId=0HM2Q4L5ROFMN:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.6549 Level=INFO RequestId=0HM2Q4L5ROFML:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:26.6773 Level=INFO RequestId=0HM2Q4L5ROFMN:00000002 Message=Request finished in 19.6797ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:26.6773 Level=INFO RequestId=0HM2Q4L5ROFML:00000002 Message=Request finished in 18.5573ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:27.0954 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000005 Message=Executed DbCommand (292ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 15:16:59.6653 Level=INFO RequestId=0HM2Q4L5ROFMM:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:59.6653 Level=INFO RequestId=0HM2Q4L5ROFMK:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:59.6653 Level=INFO RequestId=0HM2Q4L5ROFMO:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:59.6772 Level=INFO RequestId=0HM2Q4L5ROFMM:00000002 Message=Request finished in 11.9635ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:59.6772 Level=INFO RequestId=0HM2Q4L5ROFMK:00000006 Message=Request finished in 12.4191ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:59.6986 Level=INFO RequestId=0HM2Q4L5ROFMN:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:59.6986 Level=INFO RequestId=0HM2Q4L5ROFMO:00000002 Message=Request finished in 19.3711ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:59.7124 Level=INFO RequestId=0HM2Q4L5ROFML:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:16:59.7582 Level=INFO RequestId=0HM2Q4L5ROFMN:00000003 Message=Request finished in 36.9426ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:59.8163 Level=INFO RequestId=0HM2Q4L5ROFML:00000003 Message=Request finished in 56.2472ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:16:59.8995 Level=INFO RequestId=0HM2Q4L5ROFMO:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.0427 Level=INFO RequestId=0HM2Q4L5ROFMK:00000007 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.1744 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000005 Message=Executed DbCommand (242ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 15:17:00.1850 Level=INFO RequestId=0HM2Q4L5ROFMO:00000003 Message=Request finished in 229.5922ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.1961 Level=INFO RequestId=0HM2Q4L5ROFMM:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.2111 Level=INFO RequestId=0HM2Q4L5ROFMN:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.2270 Level=INFO RequestId=0HM2Q4L5ROFMK:00000007 Message=Request finished in 298.1299ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.2270 Level=INFO RequestId=0HM2Q4L5ROFMM:00000003 Message=Request finished in 58.6394ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.2742 Level=INFO RequestId=0HM2Q4L5ROFMO:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.2742 Level=INFO RequestId=0HM2Q4L5ROFMN:00000004 Message=Request finished in 60.4426ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.2937 Level=INFO RequestId=0HM2Q4L5ROFML:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.3471 Level=INFO RequestId=0HM2Q4L5ROFMK:00000008 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.3573 Level=INFO RequestId=0HM2Q4L5ROFMO:00000004 Message=Request finished in 115.0413ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.3732 Level=INFO RequestId=0HM2Q4L5ROFML:00000004 Message=Request finished in 108.3374ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.3952 Level=INFO RequestId=0HM2Q4L5ROFMN:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.3952 Level=INFO RequestId=0HM2Q4L5ROFMK:00000008 Message=Request finished in 86.6521ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.4173 Level=INFO RequestId=0HM2Q4L5ROFMM:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.4258 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000005 Message=Request finished in 47594.987ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.4487 Level=INFO RequestId=0HM2Q4L5ROFMN:00000005 Message=Request finished in 54.7815ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.4487 Level=INFO RequestId=0HM2Q4L5ROFMO:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.4487 Level=INFO RequestId=0HM2Q4L5ROFML:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:00.4722 Level=INFO RequestId=0HM2Q4L5ROFMM:00000004 Message=Request finished in 98.2677ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.4722 Level=INFO RequestId=0HM2Q4L5ROFMO:00000005 Message=Request finished in 61.7099ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:00.4925 Level=INFO RequestId=0HM2Q4L5ROFML:00000005 Message=Request finished in 60.079ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:02.5615 Level=INFO RequestId=0HM2Q4L5ROFMK:00000009 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:02.5726 Level=INFO RequestId=0HM2Q4L5ROFMK:00000009 Message=Request finished in 7.8559ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:04.6763 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:04.6934 Level=INFO RequestId=0HM2Q4L5ROFMJ:00000006 Message=Request finished in 12.2279ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:06.7414 Level=INFO RequestId=0HM2Q4L5ROFMN:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:06.7552 Level=INFO RequestId=0HM2Q4L5ROFMN:00000006 Message=Request finished in 11.5685ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:08.7921 Level=INFO RequestId=0HM2Q4L5ROFMO:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:08.8120 Level=INFO RequestId=0HM2Q4L5ROFMO:00000006 Message=Request finished in 14.3375ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:09.5309 Level=INFO RequestId=0HM2Q4L5ROFMM:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:09.5519 Level=INFO RequestId=0HM2Q4L5ROFMM:00000005 Message=Request finished in 18.9516ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:10.8325 Level=INFO RequestId=0HM2Q4L5ROFML:00000006 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:10.8325 Level=INFO RequestId=0HM2Q4L5ROFML:00000006 Message=Request finished in 9.8566ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:10.9711 Level=INFO RequestId=0HM2Q4L5ROFMK:0000000A Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:17:46.3248 Level=INFO RequestId=0HM2Q4M8CD9GB:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:17:46.3248 Level=INFO RequestId=0HM2Q4M8CD9GA:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:17:46.3849 Level=INFO RequestId=0HM2Q4M8CD9GB:00000001 Message=Request finished in 64.3264ms 200 
+TimeStamp=2020-09-16 15:17:46.4707 Level=INFO RequestId=0HM2Q4M8CD9GA:00000001 Message=Request finished in 153.1039ms 401 
+TimeStamp=2020-09-16 15:17:50.8228 Level=INFO RequestId=0HM2Q4M8CD9GB:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:17:50.8407 Level=INFO RequestId=0HM2Q4M8CD9GB:00000002 Message=Request finished in 13.5907ms 200 application/javascript
+TimeStamp=2020-09-16 15:17:52.1988 Level=INFO RequestId=0HM2Q4M8CD9GA:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:53.0649 Level=INFO RequestId=0HM2Q4M8CD9GA:00000002 Message=Request finished in 874.197ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:53.1090 Level=INFO RequestId=0HM2Q4M8CD9GB:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:53.1248 Level=INFO RequestId=0HM2Q4M8CD9GB:00000003 Message=Request finished in 14.251ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:17:53.9555 Level=INFO RequestId=0HM2Q4M8CD9GA:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:17:56.3811 Level=INFO RequestId=0HM2Q4M8CD9GB:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:17:57.8321 Level=INFO RequestId=0HM2Q4M8CD9GC:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:18:25.7390 Level=INFO RequestId=0HM2Q4M8CD9GD:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:18:25.7690 Level=INFO RequestId=0HM2Q4M8CD9GE:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:18:25.7917 Level=INFO RequestId=0HM2Q4M8CD9GB:00000004 Message=Request finished in 29385.505ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:19:20.6606 Level=INFO RequestId=0HM2Q4N4G0SCQ:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:19:20.6606 Level=INFO RequestId=0HM2Q4N4G0SCR:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:19:20.7181 Level=INFO RequestId=0HM2Q4N4G0SCQ:00000001 Message=Request finished in 67.4028ms 200 
+TimeStamp=2020-09-16 15:19:20.7955 Level=INFO RequestId=0HM2Q4N4G0SCR:00000001 Message=Request finished in 142.6969ms 401 
+TimeStamp=2020-09-16 15:19:25.3050 Level=INFO RequestId=0HM2Q4N4G0SCQ:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 15:19:25.3417 Level=INFO RequestId=0HM2Q4N4G0SCQ:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 15:19:25.5471 Level=INFO RequestId=0HM2Q4N4G0SCQ:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 15:19:25.5471 Level=INFO RequestId=0HM2Q4N4G0SCQ:00000002 Message=Request finished in 253.9997ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 15:19:25.9945 Level=INFO RequestId=0HM2Q4N4G0SCR:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:19:26.0109 Level=INFO RequestId=0HM2Q4N4G0SCR:00000002 Message=Request finished in 8.6558ms 200 application/javascript
+TimeStamp=2020-09-16 15:19:26.8895 Level=INFO RequestId=0HM2Q4N4G0SCR:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:19:27.6115 Level=INFO RequestId=0HM2Q4N4G0SCR:00000003 Message=Request finished in 708.12ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:19:27.6601 Level=INFO RequestId=0HM2Q4N4G0SCR:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:19:27.6719 Level=INFO RequestId=0HM2Q4N4G0SCR:00000004 Message=Request finished in 12.2765ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:19:28.6835 Level=INFO RequestId=0HM2Q4N4G0SCR:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:21:32.5861 Level=INFO RequestId=0HM2Q4OBQ2LTK:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:21:32.5861 Level=INFO RequestId=0HM2Q4OBQ2LTJ:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:21:32.5861 Level=INFO RequestId=0HM2Q4OBQ2LTL:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:21:32.6466 Level=INFO RequestId=0HM2Q4OBQ2LTL:00000001 Message=Request finished in 67.3321ms 200 
+TimeStamp=2020-09-16 15:21:32.6876 Level=INFO RequestId=0HM2Q4OBQ2LTJ:00000001 Message=Request finished in 110.2976ms 200 application/javascript
+TimeStamp=2020-09-16 15:21:32.8699 Level=INFO RequestId=0HM2Q4OBQ2LTK:00000001 Message=Request finished in 168.6213ms 401 
+TimeStamp=2020-09-16 15:21:33.6858 Level=INFO RequestId=0HM2Q4OBQ2LTL:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:21:34.3469 Level=INFO RequestId=0HM2Q4OBQ2LTL:00000002 Message=Request finished in 665.505ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:21:34.4002 Level=INFO RequestId=0HM2Q4OBQ2LTJ:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:21:34.4319 Level=INFO RequestId=0HM2Q4OBQ2LTJ:00000002 Message=Request finished in 21.5758ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:21:35.0751 Level=INFO RequestId=0HM2Q4OBQ2LTK:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:21:36.4477 Level=INFO RequestId=0HM2Q4OBQ2LTL:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:21:36.9863 Level=INFO RequestId=0HM2Q4OBQ2LTL:00000003 Message=Request finished in 498.5016ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:17.0392 Level=INFO RequestId=0HM2Q4OP1904L:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:22:17.0392 Level=INFO RequestId=0HM2Q4OP1904K:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:22:17.1287 Level=INFO RequestId=0HM2Q4OP1904K:00000001 Message=Request finished in 160.4892ms 200 
+TimeStamp=2020-09-16 15:22:17.1829 Level=INFO RequestId=0HM2Q4OP1904K:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/playground/settings.js  
+TimeStamp=2020-09-16 15:22:17.2144 Level=INFO RequestId=0HM2Q4OP1904K:00000002 Message=Request finished in 22.4541ms 200 application/javascript
+TimeStamp=2020-09-16 15:22:17.2282 Level=INFO RequestId=0HM2Q4OP1904L:00000001 Message=Request finished in 250.4471ms 401 
+TimeStamp=2020-09-16 15:22:18.4447 Level=INFO RequestId=0HM2Q4OP1904L:00000002 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:19.0883 Level=INFO RequestId=0HM2Q4OP1904L:00000002 Message=Request finished in 643.9637ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:19.1386 Level=INFO RequestId=0HM2Q4OP1904K:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:19.1386 Level=INFO RequestId=0HM2Q4OP1904K:00000003 Message=Request finished in 14.6406ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:21.1376 Level=INFO RequestId=0HM2Q4OP1904L:00000003 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:21.1376 Level=INFO RequestId=0HM2Q4OP1904L:00000003 Message=Request finished in 8.8522ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:21.3560 Level=INFO RequestId=0HM2Q4OP1904K:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 92
+TimeStamp=2020-09-16 15:22:23.7124 Level=INFO RequestId=0HM2Q4OP1904L:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:23.7621 Level=INFO RequestId=0HM2Q4OP1904L:00000004 Message=Request finished in 34.331ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:25.2765 Level=INFO RequestId=0HM2Q4OP1904K:00000004 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:22:25.7578 Level=INFO RequestId=0HM2Q4OP1904K:00000004 Message=Executed DbCommand (322ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 15:22:25.8433 Level=INFO RequestId=0HM2Q4OP1904L:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:29.5025 Level=INFO RequestId=0HM2Q4OP1904M:00000001 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:29.5025 Level=INFO RequestId=0HM2Q4OP1904K:00000004 Message=Request finished in 8148.8175ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:29.5025 Level=INFO RequestId=0HM2Q4OP1904L:00000005 Message=Request finished in 3662.7404ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:29.5320 Level=INFO RequestId=0HM2Q4OP1904M:00000001 Message=Request finished in 20.5208ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:22:31.6038 Level=INFO RequestId=0HM2Q4OP1904K:00000005 Message=Request starting HTTP/1.1 POST http://localhost:53089/ application/json 1468
+TimeStamp=2020-09-16 15:22:31.6356 Level=INFO RequestId=0HM2Q4OP1904K:00000005 Message=Request finished in 23.02ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:44:51.9207 Level=INFO RequestId=0HM2Q55CR78H5:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-16 15:44:51.9207 Level=INFO RequestId=0HM2Q55CR78H4:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-16 15:44:51.9899 Level=INFO RequestId=0HM2Q55CR78H5:00000001 Message=Request finished in 67.7797ms 200 
+TimeStamp=2020-09-16 15:44:52.1427 Level=INFO RequestId=0HM2Q55CR78H4:00000001 Message=Request finished in 141.6429ms 401 
+TimeStamp=2020-09-16 15:46:02.2416 Level=INFO RequestId=0HM2Q55CR78H6:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-16 15:46:02.2842 Level=INFO RequestId=0HM2Q55CR78H6:00000001 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: 
+TimeStamp=2020-09-16 15:46:02.4739 Level=INFO RequestId=0HM2Q55CR78H6:00000001 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+
+TimeStamp=2020-09-16 15:46:02.5061 Level=INFO RequestId=0HM2Q55CR78H6:00000001 Message=Request finished in 263.3562ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-16 15:46:03.5312 Level=INFO RequestId=0HM2Q55CR78H6:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-16 15:46:04.0234 Level=INFO RequestId=0HM2Q55CR78H6:00000002 Message=Request finished in 492.7758ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-16 15:46:19.5147 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/todolist  
+TimeStamp=2020-09-16 15:46:19.5147 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:46:19.9161 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Executed DbCommand (266ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 15:46:20.0058 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/todolist QueryString:  Request Body: 
+TimeStamp=2020-09-16 15:46:20.1175 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Route matched with {action = "GetToDoList", controller = "ToDoList"}. Executing action Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core)
+TimeStamp=2020-09-16 15:46:20.1505 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Executing action method Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 15:46:20.1505 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Api GetToDoList
+TimeStamp=2020-09-16 15:46:20.4168 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Executed DbCommand (252ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[DESCRIPTION], [x].[LabelId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoList] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 15:46:20.4517 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Executed action method Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 297.2813ms.
+TimeStamp=2020-09-16 15:46:20.4696 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoListDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 15:46:20.6387 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Executed action Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core) in 517.0201ms
+TimeStamp=2020-09-16 15:46:20.6387 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/todolist QueryString:  Response Body: [{"id":1,"description":"list 1","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:28:06.34","updatedBy":1,"updatedDate":"2020-09-12T19:28:06.34"}]
+TimeStamp=2020-09-16 15:46:20.6387 Level=INFO RequestId=0HM2Q55CR78H6:00000003 Message=Request finished in 1128.8196ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:46:51.5758 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Request starting HTTP/1.1 POST http://localhost:53089/api/todolist application/json-patch+json 152
+TimeStamp=2020-09-16 15:46:51.5758 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:46:51.9912 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Executed DbCommand (407ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 15:46:51.9912 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/todolist QueryString:  Request Body: {"Id":2,"Description":"List2","LabelId":1,"CreatedBy":0,"CreatedDate":"2020-09-16T10:16:31.233Z","UpdatedBy":0,"UpdatedDate":"2020-09-16T10:16:31.233Z"}
+TimeStamp=2020-09-16 15:46:52.0198 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Route matched with {action = "AddToDoList", controller = "ToDoList"}. Executing action Assignment.Api.Core.ToDoListController.AddToDoList (Assignment.Api.Core)
+TimeStamp=2020-09-16 15:46:52.0790 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Executing action method Assignment.Api.Core.ToDoListController.AddToDoList (Assignment.Api.Core) with arguments (Assignment.Contract.Core.ToDoListDTO) - Validation state: Valid
+TimeStamp=2020-09-16 15:46:52.0790 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Api AddProduct
+TimeStamp=2020-09-16 15:46:52.7773 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Executed DbCommand (326ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Int64), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ToDoList] ([Id], [CreatedBy], [CreatedDate], [DESCRIPTION], [LabelId], [UpdatedBy], [UpdatedDate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+TimeStamp=2020-09-16 15:46:53.0905 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Executed action method Assignment.Api.Core.ToDoListController.AddToDoList (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1008.8143ms.
+TimeStamp=2020-09-16 15:46:53.0905 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Executing ObjectResult, writing value of type 'Assignment.Contract.Core.ToDoListDTO'.
+TimeStamp=2020-09-16 15:46:53.1208 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Executed action Assignment.Api.Core.ToDoListController.AddToDoList (Assignment.Api.Core) in 1078.1815ms
+TimeStamp=2020-09-16 15:46:53.1208 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/todolist QueryString:  Response Body: {"id":2,"description":"List2","labelId":1,"createdBy":1,"createdDate":"2020-09-16T10:16:31.233Z","updatedBy":1,"updatedDate":"2020-09-16T10:16:31.233Z"}
+TimeStamp=2020-09-16 15:46:53.1371 Level=INFO RequestId=0HM2Q55CR78H6:00000004 Message=Request finished in 1546.9994ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 15:46:59.3409 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/todolist  
+TimeStamp=2020-09-16 15:46:59.3409 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 15:46:59.8658 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Executed DbCommand (519ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 15:46:59.8661 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/todolist QueryString:  Request Body: 
+TimeStamp=2020-09-16 15:46:59.8661 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Route matched with {action = "GetToDoList", controller = "ToDoList"}. Executing action Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core)
+TimeStamp=2020-09-16 15:46:59.8661 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Executing action method Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core) with arguments (0, 0, ) - Validation state: Valid
+TimeStamp=2020-09-16 15:46:59.8661 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Api GetToDoList
+TimeStamp=2020-09-16 15:47:00.1132 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Executed DbCommand (240ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[DESCRIPTION], [x].[LabelId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoList] AS [x]
+WHERE [x].[CreatedBy] = @__userId_0
+TimeStamp=2020-09-16 15:47:00.1132 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Executed action method Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 242.2229ms.
+TimeStamp=2020-09-16 15:47:00.1173 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.ToDoListDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-16 15:47:00.1173 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Executed action Assignment.Api.Core.ToDoListController.GetToDoList (Assignment.Api.Core) in 249.0425ms
+TimeStamp=2020-09-16 15:47:00.1173 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/todolist QueryString:  Response Body: [{"id":1,"description":"list 1","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:28:06.34","updatedBy":1,"updatedDate":"2020-09-12T19:28:06.34"},{"id":2,"description":"List2","labelId":1,"createdBy":1,"createdDate":"2020-09-16T15:46:52.087","updatedBy":1,"updatedDate":"2020-09-16T10:16:31.233"}]
+TimeStamp=2020-09-16 15:47:00.1173 Level=INFO RequestId=0HM2Q55CR78H6:00000005 Message=Request finished in 783.0692ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-16 16:47:25.6321 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Request starting HTTP/1.1 PATCH http://localhost:53089/api/ToDoItem?todoItemId=1 application/json-patch+json 51
+TimeStamp=2020-09-16 16:47:25.6321 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-16 16:47:27.6626 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executed DbCommand (240ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-16 16:47:27.6626 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString: ?todoItemId=1 Request Body: [{"op":"replace","path":"/Note","value":"Sunaina"}]
+TimeStamp=2020-09-16 16:47:27.6626 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Route matched with {action = "PartialUpdateToDoItem", controller = "ToDoItem"}. Executing action Assignment.Api.Core.ToDoItemController.PartialUpdateToDoItem (Assignment.Api.Core)
+TimeStamp=2020-09-16 16:47:27.7205 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executing action method Assignment.Api.Core.ToDoItemController.PartialUpdateToDoItem (Assignment.Api.Core) with arguments (1, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[Assignment.Contract.Core.ToDoItemDTO]) - Validation state: Valid
+TimeStamp=2020-09-16 16:47:45.6739 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executed DbCommand (268ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[LabelId], [x].[Note], [x].[ToDoListId], [x].[UpdatedBy], [x].[UpdatedDate]
+FROM [ToDoItem] AS [x]
+WHERE [x].[Id] = @__id_0
+TimeStamp=2020-09-16 16:47:48.4272 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executed DbCommand (245ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int64), @p3='?' (Size = 4000), @p4='?' (DbType = Int64), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ToDoItem] SET [CreatedBy] = @p0, [CreatedDate] = @p1, [LabelId] = @p2, [Note] = @p3, [ToDoListId] = @p4, [UpdatedBy] = @p5, [UpdatedDate] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+TimeStamp=2020-09-16 16:47:51.3350 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executed action method Assignment.Api.Core.ToDoItemController.PartialUpdateToDoItem (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 23612.1578ms.
+TimeStamp=2020-09-16 16:47:51.3350 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executing ObjectResult, writing value of type 'Assignment.Contract.Core.ToDoItemDTO'.
+TimeStamp=2020-09-16 16:47:51.3350 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Executed action Assignment.Api.Core.ToDoItemController.PartialUpdateToDoItem (Assignment.Api.Core) in 23669.0723ms
+TimeStamp=2020-09-16 16:47:51.3350 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/ToDoItem QueryString: ?todoItemId=1 Response Body: {"id":1,"toDoListId":1,"note":"Sunaina","labelId":2,"createdBy":1,"createdDate":"2020-09-12T19:35:07.48","updatedBy":1,"updatedDate":"2020-09-12T19:35:07.48"}
+TimeStamp=2020-09-16 16:47:51.3350 Level=INFO RequestId=0HM2Q55CR78H7:00000001 Message=Request finished in 25720.1103ms 200 application/json; charset=utf-8

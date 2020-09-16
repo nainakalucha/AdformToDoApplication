@@ -1,0 +1,24 @@
+TimeStamp=2020-09-14 19:07:23.1636 Level=INFO RequestId=0HM2OMD7P7NMP:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-14 19:07:23.1636 Level=INFO RequestId=0HM2OMD7P7NMO:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-14 19:07:23.2232 Level=INFO RequestId=0HM2OMD7P7NMP:00000001 Message=Request finished in 71.4269ms 200 
+TimeStamp=2020-09-14 19:07:23.5774 Level=INFO RequestId=0HM2OMD7P7NMO:00000001 Message=Request finished in 359.4277ms 401 
+TimeStamp=2020-09-14 19:07:29.6706 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:07:29.9175 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:07:31.7394 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Executed DbCommand (240ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:07:31.8358 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 5dc8875e-eff7-4e50-b1a0-6dae1e0124c9
+TimeStamp=2020-09-14 19:07:32.2396 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:07:32.2553 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:07:32.2553 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 19:07:32.5462 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Executed DbCommand (275ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:07:32.5900 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 329.6754ms.
+TimeStamp=2020-09-14 19:07:32.6947 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:07:32.7131 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 467.9607ms
+TimeStamp=2020-09-14 19:07:32.7131 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: <ArrayOfLabelDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2019-10-12T00:00:00</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2019-10-12T00:00:00</UpdatedDate><Id>1</Id><Description>Label 1</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2019-10-12T00:00:00</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2019-10-12T00:00:00</UpdatedDate><Id>2</Id><Description>Label 2</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate xsi:nil="true" /><UpdatedBy>1</UpdatedBy><UpdatedDate xsi:nil="true" /><Id>6</Id><Description>label 6</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate xsi:nil="true" /><UpdatedBy>1</UpdatedBy><UpdatedDate xsi:nil="true" /><Id>7</Id><Description>label 7</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2020-09-14T10:55:52.703</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2020-09-14T05:25:32.73</UpdatedDate><Id>8</Id><Description>Label 8</Description></LabelDTO></ArrayOfLabelDTO>Correlation Id: 5dc8875e-eff7-4e50-b1a0-6dae1e0124c9
+TimeStamp=2020-09-14 19:07:32.7131 Level=INFO RequestId=0HM2OMD7P7NMP:00000002 Message=Request finished in 3050.3704ms 200 text/xml; charset=utf-8

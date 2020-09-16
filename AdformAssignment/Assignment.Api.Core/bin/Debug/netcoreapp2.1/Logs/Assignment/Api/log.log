@@ -1,0 +1,462 @@
+TimeStamp=2020-09-14 17:11:37.5598 Level=INFO RequestId=0HM2OKCCL0QGJ:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-14 17:11:37.5974 Level=INFO RequestId=0HM2OKCCL0QGJ:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: Correlation Id: 9c6e9241-22b1-4a82-b67e-413c384d3921
+TimeStamp=2020-09-14 17:11:37.7995 Level=INFO RequestId=0HM2OKCCL0QGJ:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+Correlation Id: 9c6e9241-22b1-4a82-b67e-413c384d3921
+TimeStamp=2020-09-14 17:11:37.8083 Level=INFO RequestId=0HM2OKCCL0QGJ:00000002 Message=Request finished in 252.1787ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-14 17:11:38.3519 Level=INFO RequestId=0HM2OKCCL0QGK:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-14 17:11:38.8738 Level=INFO RequestId=0HM2OKCCL0QGK:00000002 Message=Request finished in 496.7987ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-14 17:11:51.0418 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 17:11:51.2767 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 17:11:53.2752 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Executed DbCommand (244ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 17:11:53.3329 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 759f4847-87bb-47bf-bcb6-29695aedf4ba
+TimeStamp=2020-09-14 17:11:53.4496 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 17:11:53.4775 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 17:11:53.4775 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Api GetLabel
+TimeStamp=2020-09-14 17:11:53.7560 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Executed DbCommand (245ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 17:11:57.7937 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 4334.5563ms
+TimeStamp=2020-09-14 17:12:15.7127 Level=ERROR RequestId=0HM2OKCCL0QGJ:00000003 Message=Something went wrong: System.Exception: Exception of type 'System.Exception' was thrown.
+   at Assignment.Api.Core.LabelService.GetLabels() in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Service\LabelService.cs:line 52
+   at Assignment.Api.Core.LabelController.GetLabels() in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Controllers\LabelController.cs:line 46
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext) in C:\projects\ahoy\src\Swashbuckle.AspNetCore.SwaggerUI\SwaggerUIMiddleware.cs:line 71
+   at Assignment.Api.Core.Middleware.RequestResponseLoggingMiddleware.LogResponse(HttpContext context, String correlationId) in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Middleware\RequestResponseLoggingMiddleware.cs:line 56
+   at Assignment.Api.Core.Middleware.RequestResponseLoggingMiddleware.Invoke(HttpContext context, ILogger logger) in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Middleware\RequestResponseLoggingMiddleware.cs:line 28
+   at Assignment.Api.Core.AuthenticationMiddleware.Invoke(HttpContext context, IUserService userService) in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Middleware\AuthenticationMiddleware.cs:line 59
+   at Assignment.Api.Core.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext, ILogger _logger) in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Middleware\ExceptionMiddleware.cs:line 22
+TimeStamp=2020-09-14 17:12:15.7127 Level=INFO RequestId=0HM2OKCCL0QGJ:00000003 Message=Request finished in 24678.2209ms 200 
+TimeStamp=2020-09-14 17:17:09.0511 Level=INFO RequestId=0HM2OKFKJV0R7:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/labels  
+TimeStamp=2020-09-14 17:17:09.5794 Level=INFO RequestId=0HM2OKFKJV0R7:00000001 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 17:17:11.8261 Level=INFO RequestId=0HM2OKFKJV0R7:00000001 Message=Executed DbCommand (340ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 17:17:11.8777 Level=ERROR RequestId=0HM2OKFKJV0R7:00000001 Message=An exception occurred in the database while iterating the results of a query for context type 'Assignment.Dal.AssignmentSqlDbContext'.
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+TimeStamp=2020-09-14 17:17:11.8777 Level=ERROR RequestId=0HM2OKFKJV0R7:00000001 Message=An exception occurred in the database while iterating the results of a query for context type 'Assignment.Dal.AssignmentSqlDbContext'.
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+TimeStamp=2020-09-14 17:17:11.8863 Level=ERROR RequestId=0HM2OKFKJV0R7:00000001 Message=System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Assignment.Api.Core.UserService.AuthenticateUser(String username, String password) in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Service\UserService.cs:line 58
+TimeStamp=2020-09-14 17:17:11.9001 Level=INFO RequestId=0HM2OKFKJV0R7:00000001 Message=Request finished in 2859.1157ms 401 
+TimeStamp=2020-09-14 17:17:17.6918 Level=INFO RequestId=0HM2OKFKJV0R7:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 17:17:17.6918 Level=INFO RequestId=0HM2OKFKJV0R7:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 17:17:17.9345 Level=INFO RequestId=0HM2OKFKJV0R7:00000002 Message=Executed DbCommand (236ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 17:17:17.9345 Level=ERROR RequestId=0HM2OKFKJV0R7:00000002 Message=An exception occurred in the database while iterating the results of a query for context type 'Assignment.Dal.AssignmentSqlDbContext'.
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+TimeStamp=2020-09-14 17:17:17.9345 Level=ERROR RequestId=0HM2OKFKJV0R7:00000002 Message=An exception occurred in the database while iterating the results of a query for context type 'Assignment.Dal.AssignmentSqlDbContext'.
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+TimeStamp=2020-09-14 17:17:17.9345 Level=ERROR RequestId=0HM2OKFKJV0R7:00000002 Message=System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Assignment.Api.Core.UserService.AuthenticateUser(String username, String password) in C:\Users\sunaina2498\Documents\GitHub\AdformAssessment\AdformAssignment\Assignment.Api.Core\Service\UserService.cs:line 58
+TimeStamp=2020-09-14 17:17:17.9345 Level=INFO RequestId=0HM2OKFKJV0R7:00000002 Message=Request finished in 244.5327ms 401 
+TimeStamp=2020-09-14 17:17:31.8093 Level=INFO RequestId=0HM2OKFRCIS1B:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-14 17:17:31.8093 Level=INFO RequestId=0HM2OKFRCIS1A:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-14 17:17:31.8812 Level=INFO RequestId=0HM2OKFRCIS1B:00000001 Message=Request finished in 75.68ms 200 
+TimeStamp=2020-09-14 17:17:32.2517 Level=INFO RequestId=0HM2OKFRCIS1A:00000001 Message=Request finished in 451.697ms 401 
+TimeStamp=2020-09-14 17:17:35.7995 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 17:17:36.0218 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 17:17:37.9419 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Executed DbCommand (299ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 17:17:38.0376 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 76967f6f-c7d7-4982-9871-1d2b412f788d
+TimeStamp=2020-09-14 17:17:38.3811 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 17:17:38.4037 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 17:17:38.4037 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 17:17:38.8211 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Executed DbCommand (357ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 17:17:38.9485 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 532.0012ms.
+TimeStamp=2020-09-14 17:17:39.0147 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 17:17:39.2000 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 813.9997ms
+TimeStamp=2020-09-14 17:17:39.2000 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: [{"id":1,"description":"Label 1","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":2,"description":"Label 2","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":6,"description":"label 6","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":7,"description":"label 7","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":8,"description":"Label 8","createdBy":1,"createdDate":"2020-09-14T10:55:52.703","updatedBy":1,"updatedDate":"2020-09-14T05:25:32.73"}]Correlation Id: 76967f6f-c7d7-4982-9871-1d2b412f788d
+TimeStamp=2020-09-14 17:17:39.2314 Level=INFO RequestId=0HM2OKFRCIS1B:00000002 Message=Request finished in 3414.4775ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-14 17:20:15.8881 Level=INFO RequestId=0HM2OKHCA18MN:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-14 17:20:15.8881 Level=INFO RequestId=0HM2OKHCA18MM:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-14 17:20:15.9622 Level=INFO RequestId=0HM2OKHCA18MM:00000001 Message=Request finished in 69.9274ms 200 
+TimeStamp=2020-09-14 17:20:16.5738 Level=INFO RequestId=0HM2OKHCA18MN:00000001 Message=Request finished in 518.5369ms 401 
+TimeStamp=2020-09-14 17:20:16.5738 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 17:20:16.9507 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 17:20:18.8498 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Executed DbCommand (304ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 17:20:18.9705 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 9a9ba9d5-ada1-481d-9b6d-35638409da9d
+TimeStamp=2020-09-14 17:20:19.4044 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 17:20:19.4261 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 17:20:19.4261 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 17:20:19.6796 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Executed DbCommand (240ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 17:20:19.7329 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 301.5031ms.
+TimeStamp=2020-09-14 17:20:19.7559 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 17:20:19.9473 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 539.0917ms
+TimeStamp=2020-09-14 17:20:19.9473 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: [{"id":1,"description":"Label 1","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":2,"description":"Label 2","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":6,"description":"label 6","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":7,"description":"label 7","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":8,"description":"Label 8","createdBy":1,"createdDate":"2020-09-14T10:55:52.703","updatedBy":1,"updatedDate":"2020-09-14T05:25:32.73"}]Correlation Id: 9a9ba9d5-ada1-481d-9b6d-35638409da9d
+TimeStamp=2020-09-14 17:20:19.9648 Level=INFO RequestId=0HM2OKHCA18MM:00000002 Message=Request finished in 3377.2608ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-14 19:01:21.6639 Level=INFO RequestId=0HM2OKHCA18MO:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/index.html  
+TimeStamp=2020-09-14 19:01:21.6651 Level=INFO RequestId=0HM2OKHCA18MO:00000001 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Request Body: Correlation Id: 959e3675-502a-4770-934b-dde3dd32054d
+TimeStamp=2020-09-14 19:01:22.1713 Level=INFO RequestId=0HM2OKHCA18MO:00000001 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /swagger/index.html QueryString:  Response Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+    <script>
+        if (window.navigator.userAgent.indexOf("Edge") > -1) {
+            console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
+            window.fetch = undefined;
+        }
+    </script>
+
+    <script src="./swagger-ui-bundle.js"></script>
+    <script src="./swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function () {
+            var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"My API V1"}],"deepLinking":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":false,"docExpansion":"list","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"]}');
+            var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+            configObject.urls.forEach(function (item) {
+                if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+                item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+            });
+
+            // If validatorUrl is not explicitly provided, disable the feature by setting to null
+            if (!configObject.hasOwnProperty("validatorUrl"))
+                configObject.validatorUrl = null
+
+            // If oauth2RedirectUrl isn't specified, use the built-in default
+            if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+                configObject.oauth2RedirectUrl = window.location.href.replace("index.html", "oauth2-redirect.html").split('#')[0];
+
+            // Apply mandatory parameters
+            configObject.dom_id = "#swagger-ui";
+            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+            configObject.layout = "StandaloneLayout";
+
+            // Begin Swagger UI call region
+
+            const ui = SwaggerUIBundle(configObject);
+
+            ui.initOAuth(oauthConfigObject);
+
+            // End Swagger UI call region
+
+            window.ui = ui
+        }
+    </script>
+</body>
+</html>
+Correlation Id: 959e3675-502a-4770-934b-dde3dd32054d
+TimeStamp=2020-09-14 19:01:22.3214 Level=INFO RequestId=0HM2OKHCA18MO:00000001 Message=Request finished in 612.6322ms 200 text/html;charset=utf-8
+TimeStamp=2020-09-14 19:01:22.7126 Level=INFO RequestId=0HM2OKHCA18MO:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/swagger/v1/swagger.json  
+TimeStamp=2020-09-14 19:01:24.2270 Level=INFO RequestId=0HM2OKHCA18MO:00000002 Message=Request finished in 1551.5894ms 200 application/json;charset=utf-8
+TimeStamp=2020-09-14 19:02:24.9567 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:02:24.9751 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:02:26.8334 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Executed DbCommand (251ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:02:26.8334 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: e82da4b0-4be3-4225-9856-7ed11dfd56d8
+TimeStamp=2020-09-14 19:02:26.8363 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:02:26.8363 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:02:26.8363 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Api GetLabel
+TimeStamp=2020-09-14 19:02:27.0820 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Executed DbCommand (240ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:02:27.0820 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 244.1415ms.
+TimeStamp=2020-09-14 19:02:27.1155 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:02:27.1359 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 297.6652ms
+TimeStamp=2020-09-14 19:02:27.1359 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: <ArrayOfLabelDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2019-10-12T00:00:00</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2019-10-12T00:00:00</UpdatedDate><Id>1</Id><Description>Label 1</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2019-10-12T00:00:00</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2019-10-12T00:00:00</UpdatedDate><Id>2</Id><Description>Label 2</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate xsi:nil="true" /><UpdatedBy>1</UpdatedBy><UpdatedDate xsi:nil="true" /><Id>6</Id><Description>label 6</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate xsi:nil="true" /><UpdatedBy>1</UpdatedBy><UpdatedDate xsi:nil="true" /><Id>7</Id><Description>label 7</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2020-09-14T10:55:52.703</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2020-09-14T05:25:32.73</UpdatedDate><Id>8</Id><Description>Label 8</Description></LabelDTO></ArrayOfLabelDTO>Correlation Id: e82da4b0-4be3-4225-9856-7ed11dfd56d8
+TimeStamp=2020-09-14 19:02:27.1359 Level=INFO RequestId=0HM2OKHCA18MP:00000001 Message=Request finished in 2210.3376ms 200 text/xml; charset=utf-8
+TimeStamp=2020-09-14 19:03:02.6129 Level=INFO RequestId=0HM2OMAQ4BPD9:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-14 19:03:02.6129 Level=INFO RequestId=0HM2OMAQ4BPDA:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-14 19:03:02.6129 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:03:02.8783 Level=INFO RequestId=0HM2OMAQ4BPD9:00000001 Message=Request finished in 260.1354ms 200 
+TimeStamp=2020-09-14 19:03:03.2276 Level=INFO RequestId=0HM2OMAQ4BPDA:00000001 Message=Request finished in 564.3625ms 401 
+TimeStamp=2020-09-14 19:03:03.5387 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:03:05.3097 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Executed DbCommand (243ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:03:05.3826 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 6e4a3747-22c2-49ed-80a0-07dc9a3762b2
+TimeStamp=2020-09-14 19:03:05.6608 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:03:05.6851 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:03:05.6851 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Api GetLabel
+TimeStamp=2020-09-14 19:03:05.9926 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Executed DbCommand (287ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:03:06.0358 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 343.6471ms.
+TimeStamp=2020-09-14 19:03:06.0602 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:03:06.2436 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 578.5116ms
+TimeStamp=2020-09-14 19:03:06.2436 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: [{"id":1,"description":"Label 1","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":2,"description":"Label 2","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":6,"description":"label 6","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":7,"description":"label 7","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":8,"description":"Label 8","createdBy":1,"createdDate":"2020-09-14T10:55:52.703","updatedBy":1,"updatedDate":"2020-09-14T05:25:32.73"}]Correlation Id: 6e4a3747-22c2-49ed-80a0-07dc9a3762b2
+TimeStamp=2020-09-14 19:03:06.2589 Level=INFO RequestId=0HM2OMAQ4BPD8:00000001 Message=Request finished in 3649.8168ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-14 19:03:15.5841 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:03:15.5888 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:03:15.8376 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Executed DbCommand (242ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:03:15.8376 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: e94bb990-a101-4eba-bd6b-469d8a7b67af
+TimeStamp=2020-09-14 19:03:15.8376 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:03:15.8376 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:03:15.8376 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 19:03:16.1039 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Executed DbCommand (241ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:03:16.2165 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 257.8139ms.
+TimeStamp=2020-09-14 19:03:16.2606 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:03:16.2796 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 416.0447ms
+TimeStamp=2020-09-14 19:03:16.2796 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: [{"id":1,"description":"Label 1","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":2,"description":"Label 2","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":6,"description":"label 6","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":7,"description":"label 7","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":8,"description":"Label 8","createdBy":1,"createdDate":"2020-09-14T10:55:52.703","updatedBy":1,"updatedDate":"2020-09-14T05:25:32.73"}]Correlation Id: e94bb990-a101-4eba-bd6b-469d8a7b67af
+TimeStamp=2020-09-14 19:03:16.2973 Level=INFO RequestId=0HM2OMAQ4BPD9:00000002 Message=Request finished in 697.4045ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-14 19:03:23.3014 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:03:23.3075 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:03:23.7113 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Executed DbCommand (291ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:03:23.7113 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 7d934487-761d-4306-8986-08f124bcad15
+TimeStamp=2020-09-14 19:03:23.7353 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:03:23.7442 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:03:23.7442 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 19:03:23.9829 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Executed DbCommand (237ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:03:23.9829 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 238.9932ms.
+TimeStamp=2020-09-14 19:03:23.9829 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:03:23.9829 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 253.8327ms
+TimeStamp=2020-09-14 19:03:23.9829 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: [{"id":1,"description":"Label 1","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":2,"description":"Label 2","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":6,"description":"label 6","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":7,"description":"label 7","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":8,"description":"Label 8","createdBy":1,"createdDate":"2020-09-14T10:55:52.703","updatedBy":1,"updatedDate":"2020-09-14T05:25:32.73"}]Correlation Id: 7d934487-761d-4306-8986-08f124bcad15
+TimeStamp=2020-09-14 19:03:23.9941 Level=INFO RequestId=0HM2OMAQ4BPDA:00000002 Message=Request finished in 692.0041ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-14 19:03:34.5362 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:03:34.5396 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:03:34.7864 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Executed DbCommand (236ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:03:34.7864 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: 7a9eaeaa-4dca-49c0-aa62-5d96144469bb
+TimeStamp=2020-09-14 19:03:34.7958 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:03:34.7958 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:03:34.7958 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 19:03:35.1190 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Executed DbCommand (298ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:03:35.2023 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 320.7055ms.
+TimeStamp=2020-09-14 19:03:35.2023 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:03:35.2109 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 412.7493ms
+TimeStamp=2020-09-14 19:03:35.2109 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: [{"id":1,"description":"Label 1","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":2,"description":"Label 2","createdBy":1,"createdDate":"2019-10-12T00:00:00","updatedBy":1,"updatedDate":"2019-10-12T00:00:00"},{"id":6,"description":"label 6","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":7,"description":"label 7","createdBy":1,"createdDate":null,"updatedBy":1,"updatedDate":null},{"id":8,"description":"Label 8","createdBy":1,"createdDate":"2020-09-14T10:55:52.703","updatedBy":1,"updatedDate":"2020-09-14T05:25:32.73"}]Correlation Id: 7a9eaeaa-4dca-49c0-aa62-5d96144469bb
+TimeStamp=2020-09-14 19:03:35.2760 Level=INFO RequestId=0HM2OMAQ4BPD8:00000002 Message=Request finished in 681.3356ms 200 application/json; charset=utf-8
+TimeStamp=2020-09-14 19:04:07.5233 Level=INFO RequestId=0HM2OMBDF293R:00000001 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/label  
+TimeStamp=2020-09-14 19:04:07.5233 Level=INFO RequestId=0HM2OMBDF293Q:00000001 Message=Request starting HTTP/1.1 DEBUG http://localhost:53089/  0
+TimeStamp=2020-09-14 19:04:07.5991 Level=INFO RequestId=0HM2OMBDF293Q:00000001 Message=Request finished in 82.0399ms 200 
+TimeStamp=2020-09-14 19:04:08.0129 Level=INFO RequestId=0HM2OMBDF293R:00000001 Message=Request finished in 463.6129ms 401 
+TimeStamp=2020-09-14 19:04:11.5880 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Request starting HTTP/1.1 GET http://localhost:53089/api/v1/label  
+TimeStamp=2020-09-14 19:04:11.8635 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Entity Framework Core 2.1.1-rtm-30846 initialized 'AssignmentSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+TimeStamp=2020-09-14 19:04:14.0208 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Executed DbCommand (331ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDate], [x].[Password], [x].[UpdatedBy], [x].[UpdatedDate], [x].[Username]
+FROM [User] AS [x]
+WHERE ([x].[Username] = @__username_0) AND ([x].[Password] = @__password_1)
+TimeStamp=2020-09-14 19:04:14.1082 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Http Request Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Request Body: Correlation Id: fa43bd7c-26ab-4aed-ae97-4d604dcb2c4e
+TimeStamp=2020-09-14 19:04:14.4219 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Route matched with {action = "GetLabels", controller = "Label"}. Executing action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core)
+TimeStamp=2020-09-14 19:04:14.4360 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Executing action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) - Validation state: Valid
+TimeStamp=2020-09-14 19:04:14.4360 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Api GetLabel
+TimeStamp=2020-09-14 19:04:14.7617 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Executed DbCommand (309ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreatedBy], [l].[CreatedDate], [l].[DESCRIPTION], [l].[UpdatedBy], [l].[UpdatedDate]
+FROM [Label] AS [l]
+TimeStamp=2020-09-14 19:04:14.8800 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Executed action method Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 439.2513ms.
+TimeStamp=2020-09-14 19:04:14.9676 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Assignment.Contract.Core.LabelDTO, Assignment.Contract.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+TimeStamp=2020-09-14 19:04:14.9889 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Executed action Assignment.Api.Core.LabelController.GetLabels (Assignment.Api.Core) in 556.9122ms
+TimeStamp=2020-09-14 19:04:14.9889 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Http Response Information:
+Schema:http Host: localhost:53089 Path: /api/v1/label QueryString:  Response Body: <ArrayOfLabelDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2019-10-12T00:00:00</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2019-10-12T00:00:00</UpdatedDate><Id>1</Id><Description>Label 1</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2019-10-12T00:00:00</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2019-10-12T00:00:00</UpdatedDate><Id>2</Id><Description>Label 2</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate xsi:nil="true" /><UpdatedBy>1</UpdatedBy><UpdatedDate xsi:nil="true" /><Id>6</Id><Description>label 6</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate xsi:nil="true" /><UpdatedBy>1</UpdatedBy><UpdatedDate xsi:nil="true" /><Id>7</Id><Description>label 7</Description></LabelDTO><LabelDTO><CreatedBy>1</CreatedBy><CreatedDate>2020-09-14T10:55:52.703</CreatedDate><UpdatedBy>1</UpdatedBy><UpdatedDate>2020-09-14T05:25:32.73</UpdatedDate><Id>8</Id><Description>Label 8</Description></LabelDTO></ArrayOfLabelDTO>Correlation Id: fa43bd7c-26ab-4aed-ae97-4d604dcb2c4e
+TimeStamp=2020-09-14 19:04:15.0117 Level=INFO RequestId=0HM2OMBDF293Q:00000002 Message=Request finished in 3426.6271ms 200 text/xml; charset=utf-8
